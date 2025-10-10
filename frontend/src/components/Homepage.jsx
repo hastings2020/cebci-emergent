@@ -343,3 +343,8 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+    </div>
+  );
+};
+
+export default Homepage;
