@@ -1,34 +1,65 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Global styles for basketball club website */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-.App-link {
-    color: #61dafb;
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-in 0.3s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 1s ease-in 0.6s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Image optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
 }
