@@ -134,7 +134,7 @@ export const mockLeadership = [
     position: 'Club President',
     bio: '15 years coaching experience, former college player',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-    contact: 'david@kidsbasketball.com',
+    contact: 'david@cranbourne-eagles.com',
     phone: '(555) 123-4567'
   },
   {
