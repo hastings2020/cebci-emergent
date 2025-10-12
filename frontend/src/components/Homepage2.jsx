@@ -299,7 +299,7 @@ const Homepage2 = () => {
                 <span className="text-lg font-bold">Cranbourne Eagles Basketball Club</span>
               </div>
               <p className="text-gray-400 mb-4">
-                Developing young athletes through basketball since 2010. Join our community of players, coaches, and families.
+                Developing young athletes through basketball since 2010. Join our community of players, coaches, and families at Cranbourne Eagles.
               </p>
               <div className="flex space-x-4">
                 <Button size="sm" variant="ghost" className="p-2 hover:bg-orange-600">
