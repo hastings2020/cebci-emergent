@@ -337,7 +337,7 @@ const Homepage2 = () => {
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 mr-3 text-orange-400" />
-                  <span>info@kidsbasketball.com</span>
+                  <span>info@cranbourne-eagles.com</span>
                 </div>
               </div>
             </div>
