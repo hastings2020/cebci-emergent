@@ -143,7 +143,7 @@ export const mockLeadership = [
     position: 'Head of Youth Development', 
     bio: 'Sports psychology PhD, youth development specialist',
     image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
-    contact: 'jennifer@kidsbasketball.com',
+    contact: 'jennifer@cranbourne-eagles.com',
     phone: '(555) 123-4568'
   },
   {
