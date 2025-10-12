@@ -152,7 +152,7 @@ export const mockLeadership = [
     position: 'Training Director',
     bio: 'Former professional player, certified trainer',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-    contact: 'marcus@kidsbasketball.com',
+    contact: 'marcus@cranbourne-eagles.com',
     phone: '(555) 123-4569'
   }
 ];
