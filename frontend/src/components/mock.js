@@ -327,8 +327,8 @@ export const mockContactInfo = {
     sunday: '1:00 PM - 5:00 PM'
   },
   socialMedia: {
-    facebook: 'https://facebook.com/kidsbasketballclub',
-    instagram: 'https://instagram.com/kidsbasketball',
-    twitter: 'https://twitter.com/kidsbball'
+    facebook: 'https://facebook.com/cranbourneeagles',
+    instagram: 'https://instagram.com/cranbourneeagles',
+    twitter: 'https://twitter.com/cranbourneeagles'
   }
 };
