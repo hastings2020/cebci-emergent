@@ -167,7 +167,7 @@ export const mockCoachesByAge = [
       experience: '8 years', 
       specialization: 'Youth Development',
       certifications: ['Youth Basketball Coach', 'First Aid/CPR'],
-      email: 'sarah@kidsbasketball.com'
+      email: 'sarah@cranbourne-eagles.com'
     },
     assistants: [
       { name: 'Mike Davis', role: 'Assistant Coach', experience: '3 years' }
