@@ -10,17 +10,17 @@ const Homepage = () => {
 
   const heroImages = [
     {
-      url: 'https://images.unsplash.com/photo-1559838831-d8fbd8af6469',
+      url: 'https://cebci.au/wp-content/uploads/2023/02/excom-scaled.jpeg',
       title: 'Young Champions in Action',
       subtitle: 'Building Skills, Character & Friendship'
     },
     {
-      url: 'https://images.unsplash.com/photo-1727449301929-bcd5b8b920de', 
+      url: 'https://cebci.au/wp-content/uploads/2023/02/samp2-scaled.jpg', 
       title: 'Team Spirit & Excellence',
       subtitle: 'Every Game is a Learning Experience'
     },
     {
-      url: 'https://images.pexels.com/photos/30637225/pexels-photo-30637225.jpeg',
+      url: 'https://cebci.au/wp-content/uploads/2023/02/samp1-scaled.jpg',
       title: 'Future Basketball Stars',
       subtitle: 'Join Our Growing Family'
     }
