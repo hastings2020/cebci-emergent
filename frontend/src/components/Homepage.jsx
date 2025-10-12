@@ -139,10 +139,12 @@ const Homepage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center">
-                <Target className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900">Kids Basketball Club</span>
+              <img 
+                src="https://cebci.au/wp-content/uploads/2022/08/CE-Logo-White-Background.png" 
+                alt="Cranbourne Eagles Logo" 
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <span className="text-xl font-bold text-gray-900">Cranbourne Eagles Basketball Club</span>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
