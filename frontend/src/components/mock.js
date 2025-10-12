@@ -320,7 +320,7 @@ export const mockRegistrationData = {
 export const mockContactInfo = {
   address: '123 Basketball Ave, Sports City, SC 12345',
   phone: '(555) 123-BALL',
-  email: 'info@kidsbasketball.com',
+  email: 'info@cranbourne-eagles.com',
   hours: {
     weekdays: '3:00 PM - 9:00 PM',
     saturday: '9:00 AM - 6:00 PM',
