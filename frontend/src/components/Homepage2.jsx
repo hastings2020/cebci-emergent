@@ -359,7 +359,7 @@ const Homepage2 = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Kids Basketball Club. All rights reserved. | Built with ❤️ for young athletes</p>
+            <p>&copy; 2024 Cranbourne Eagles Basketball Club. All rights reserved. | Built with ❤️ for young athletes</p>
           </div>
         </div>
       </footer>
