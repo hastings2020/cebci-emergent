@@ -291,10 +291,12 @@ const Homepage2 = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center">
-                  <Target className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-lg font-bold">Kids Basketball Club</span>
+                <img 
+                  src="https://cebci.au/wp-content/uploads/2022/08/CE-Logo-White-Background.png" 
+                  alt="Cranbourne Eagles Logo" 
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <span className="text-lg font-bold">Cranbourne Eagles Basketball Club</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Developing young athletes through basketball since 2010. Join our community of players, coaches, and families.
