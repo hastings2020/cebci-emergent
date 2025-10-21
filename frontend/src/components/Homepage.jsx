@@ -8,6 +8,7 @@ const Homepage = memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeScorersTab, setActiveScorersTab] = useState('U8');
+  const [activeTeamsTab, setActiveTeamsTab] = useState('U8');
 
   const heroImages = [
     {
@@ -491,8 +492,26 @@ const Homepage = memo(() => {
       <section id="teams" className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
           <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Our Teams</h2>
+
+          {/* Age Group Tabs */}
+          <div className="flex overflow-x-auto space-x-1 mb-4 border-b border-gray-300 justify-center">
+            {['U8', 'U10', 'U12', 'U14', 'U16', 'U18'].map((age) => (
+              <button
+                key={age}
+                onClick={() => setActiveTeamsTab(age)}
+                className={`px-4 py-2 text-sm font-semibold transition-colors whitespace-nowrap ${
+                  activeTeamsTab === age
+                    ? 'text-orange-600 border-b-2 border-orange-600'
+                    : 'text-gray-600 hover:text-orange-500'
+                }`}
+              >
+                {age}
+              </button>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {teams.map((team, index) => (
+            {teams.filter(team => team.age === activeTeamsTab).map((team, index) => (
               <Card key={index} className="group overflow-hidden bg-white shadow hover:shadow-md transition-all">
                 <div className="relative h-32 overflow-hidden">
                   <img

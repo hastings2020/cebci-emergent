@@ -1,10 +1,20 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { Trophy, Target, Users, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 
 const Homepage2 = memo(() => {
+  const [activeCoachesTab, setActiveCoachesTab] = useState('U8');
+  const [activeTeamTab, setActiveTeamTab] = useState({
+    U8: 'Kareem',
+    U10: 'Bryant',
+    U12: 'Drexler',
+    U14: 'Barkley',
+    U16: 'Garnett',
+    U18: 'James'
+  });
+
   const leadership = [
     {
       name: 'David Martinez',
@@ -15,7 +25,7 @@ const Homepage2 = memo(() => {
     },
     {
       name: 'Jennifer Lee',
-      position: 'Head of Youth Development',
+      position: 'Vice President',
       bio: 'Sports psychology PhD',
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face&q=80',
       contact: 'jennifer@kidsbasketball.com'
@@ -29,29 +39,79 @@ const Homepage2 = memo(() => {
     }
   ];
 
-  const coachesByAge = [
-    {
-      ageGroup: 'U8 & U10',
-      teams: ['Little Dribblers', 'Mini Ballers'],
-      headCoach: { name: 'Sarah Johnson', experience: '8 years', specialization: 'Youth Development' },
-      assistants: [{ name: 'Mike Davis', role: 'Assistant Coach' }],
-      manager: 'Emma Wilson'
+  const coachesByAge = {
+    U8: {
+      teams: [
+        { name: 'Kareem', gender: 'Boys', grade: 'Saturday U8 Boys Grey', coach: 'Sarah Johnson', assistant: 'Mike Davis', manager: 'Emma Wilson' },
+        { name: 'Jewel', gender: 'Girls', grade: 'Saturday U8 Girls Blue', coach: 'Emily Chen', assistant: 'Lisa Taylor', manager: 'Anna Garcia' }
+      ]
     },
-    {
-      ageGroup: 'U12 & U14',
-      teams: ['Rising Stars', 'Court Warriors'],
-      headCoach: { name: 'James Brown', experience: '12 years', specialization: 'Skills Development' },
-      assistants: [{ name: 'Lisa Garcia', role: 'Assistant Coach' }],
-      manager: 'Robert Taylor'
+    U10: {
+      teams: [
+        { name: 'Bryant', gender: 'Boys', grade: 'Thursday U10 Mixed A Grade', coach: 'Mike Davis', assistant: 'Tom Anderson', manager: 'Sarah Kim' },
+        { name: 'Curry', gender: 'Boys', grade: 'Saturday U10 Boys A Grade', coach: 'James Wilson', assistant: 'Chris Martin', manager: 'Jennifer Lopez' },
+        { name: 'Doncic', gender: 'Boys', grade: 'Saturday U10 Boys A Grade', coach: 'Robert Lee', assistant: 'Steve Brown', manager: 'Michelle Scott' },
+        { name: 'Greer', gender: 'Boys', grade: 'Saturday U10 Boys D2 Grade', coach: 'Tom Anderson', assistant: 'Dan White', manager: 'Rachel Green' },
+        { name: 'Irving', gender: 'Boys', grade: 'Saturday U10 Boys C2 Grade', coach: 'Chris Martin', assistant: 'Paul Martinez', manager: 'Amy Roberts' },
+        { name: 'Magic', gender: 'Boys', grade: 'Saturday U10 Boys B Grade', coach: 'Steve Brown', assistant: 'Ryan Clark', manager: 'Laura Martin' },
+        { name: 'Mini Hustlers', gender: 'Boys', grade: 'Saturday U10 Boys C3 Grade', coach: 'Dan White', assistant: 'Josh Moore', manager: 'Kate Wilson' },
+        { name: 'Gigi', gender: 'Girls', grade: 'Saturday U10 Girls A Grade', coach: 'Lisa Taylor', assistant: 'Sarah Kim', manager: 'Diana Foster' },
+        { name: 'Mambacita', gender: 'Girls', grade: 'Saturday U10 Girls A Grade', coach: 'Anna Garcia', assistant: 'Jennifer Lopez', manager: 'Jessica Brown' },
+        { name: 'Mills', gender: 'Mixed', grade: 'Thursday U10 Mixed C1 Grade', coach: 'Paul Martinez', assistant: 'Ryan Clark', manager: 'Maya Singh' }
+      ]
     },
-    {
-      ageGroup: 'U16 & U18',
-      teams: ['Elite Squad', 'Championship Team'],
-      headCoach: { name: 'Coach Anderson', experience: '15 years', specialization: 'Competitive Play' },
-      assistants: [{ name: 'Coach Williams', role: 'Assistant Coach' }],
-      manager: 'Diana Foster'
+    U12: {
+      teams: [
+        { name: 'Drexler', gender: 'Boys', grade: 'Saturday U12 Boys C2 Grade', coach: 'Emma Wilson', assistant: 'Mark Thompson', manager: 'Amanda White' },
+        { name: 'Kuminga', gender: 'Boys', grade: 'Saturday U12 Boys C3 Grade', coach: 'Mark Thompson', assistant: 'Kevin Harris', manager: 'Nicole Davis' },
+        { name: 'Nowitzki', gender: 'Boys', grade: 'Saturday U12 Boys D2 Grade', coach: 'Kevin Harris', assistant: 'Ryan Clark', manager: 'Sarah Johnson' },
+        { name: 'Pippen', gender: 'Boys', grade: 'Saturday U12 Boys A Grade', coach: 'Ryan Clark', assistant: 'Josh Moore', manager: 'Emily Chen' },
+        { name: 'Warriors', gender: 'Boys', grade: 'Saturday U12 Boys E1 Grade', coach: 'Josh Moore', assistant: 'Tom Anderson', manager: 'Lisa Taylor' },
+        { name: 'Crystal', gender: 'Girls', grade: 'Saturday U12 Girls C3 Grade', coach: 'Sarah Kim', assistant: 'Jennifer Lopez', manager: 'Anna Garcia' },
+        { name: 'Meyers', gender: 'Girls', grade: 'Saturday U12 Girls B Grade', coach: 'Jennifer Lopez', assistant: 'Michelle Scott', manager: 'Diana Foster' },
+        { name: 'Pettit', gender: 'Girls', grade: 'Saturday U12 Girls B Grade', coach: 'Michelle Scott', assistant: 'Rachel Green', manager: 'Jessica Brown' }
+      ]
+    },
+    U14: {
+      teams: [
+        { name: 'Barkley', gender: 'Boys', grade: 'Saturday U14 Boys C1 Grade', coach: 'James Brown', assistant: 'Alex Turner', manager: 'Kate Wilson' },
+        { name: 'Durant', gender: 'Boys', grade: 'Saturday U14 Boys C3 Grade', coach: 'Alex Turner', assistant: 'David Miller', manager: 'Maya Singh' },
+        { name: 'Harper', gender: 'Boys', grade: 'Saturday U14 Boys C1 Grade', coach: 'David Miller', assistant: 'Brian Wilson', manager: 'Amanda White' },
+        { name: 'Havlicek', gender: 'Boys', grade: 'Saturday U14 Boys C2 Grade', coach: 'Brian Wilson', assistant: 'Eric Davis', manager: 'Nicole Davis' },
+        { name: 'Rodman', gender: 'Boys', grade: 'Saturday U14 Boys C1 Grade', coach: 'Eric Davis', assistant: 'Nick Johnson', manager: 'Sarah Johnson' },
+        { name: 'Sharman', gender: 'Boys', grade: 'Saturday U14 Boys D2 Grade', coach: 'Nick Johnson', assistant: 'James Brown', manager: 'Emily Chen' },
+        { name: 'A\'ja', gender: 'Girls', grade: 'Saturday U14 Girls B Grade', coach: 'Rachel Green', assistant: 'Amy Roberts', manager: 'Lisa Taylor' },
+        { name: 'Lobo', gender: 'Girls', grade: 'Saturday U14 Girls C2 Grade', coach: 'Amy Roberts', assistant: 'Laura Martin', manager: 'Anna Garcia' },
+        { name: 'Swoopes', gender: 'Girls', grade: 'Saturday U14 Girls C1 Grade', coach: 'Laura Martin', assistant: 'Rachel Green', manager: 'Diana Foster' }
+      ]
+    },
+    U16: {
+      teams: [
+        { name: 'Garnett', gender: 'Boys', grade: 'Saturday U16 Boys D1 Grade', coach: 'Michael Stevens', assistant: 'Peter Jackson', manager: 'Jessica Brown' },
+        { name: 'Luol', gender: 'Boys', grade: 'Saturday U16 Boys C2 Grade', coach: 'Peter Jackson', assistant: 'Tony Allen', manager: 'Kate Wilson' },
+        { name: 'Payton', gender: 'Boys', grade: 'TBD', coach: 'Tony Allen', assistant: 'Greg Thomas', manager: 'Maya Singh' },
+        { name: 'Shulga', gender: 'Boys', grade: 'Saturday U16 Boys E2 Grade', coach: 'Greg Thomas', assistant: 'John Walker', manager: 'Amanda White' },
+        { name: 'Stockton', gender: 'Boys', grade: 'Saturday U16 Boys D3 Grade', coach: 'John Walker', assistant: 'Chris Evans', manager: 'Nicole Davis' },
+        { name: 'Tatum', gender: 'Boys', grade: 'Saturday U16 Boys C2 Grade', coach: 'Chris Evans', assistant: 'Lisa Garcia', manager: 'Sarah Johnson' },
+        { name: 'Wade', gender: 'Boys', grade: 'Saturday U16 Boys B Grade', coach: 'Lisa Garcia', assistant: 'Sam Cooper', manager: 'Emily Chen' },
+        { name: 'Webber', gender: 'Boys', grade: 'Saturday U16 Boys E1 Grade', coach: 'Sam Cooper', assistant: 'Michael Stevens', manager: 'Lisa Taylor' },
+        { name: 'Clark', gender: 'Girls', grade: 'Saturday U16 Girls C1 Grade', coach: 'Kate Wilson', assistant: 'Diana Foster', manager: 'Anna Garcia' },
+        { name: 'Cunningham', gender: 'Girls', grade: 'Saturday U16 Girls A Grade', coach: 'Diana Foster', assistant: 'Jessica Brown', manager: 'Diana Foster' },
+        { name: 'Diamond', gender: 'Girls', grade: 'Saturday U16 Girls C2 Grade', coach: 'Jessica Brown', assistant: 'Maya Singh', manager: 'Jessica Brown' },
+        { name: 'Jashanti', gender: 'Girls', grade: 'TBD', coach: 'Maya Singh', assistant: 'Kate Wilson', manager: 'Kate Wilson' }
+      ]
+    },
+    U18: {
+      teams: [
+        { name: 'James', gender: 'Boys', grade: 'Sunday U18 Boys A Grade', coach: 'Robert Taylor', assistant: 'Kevin Adams', manager: 'Amanda White' },
+        { name: 'Mutombo', gender: 'Boys', grade: 'Sunday U18 Boys C1 Grade', coach: 'Kevin Adams', assistant: 'Tom Hughes', manager: 'Nicole Davis' },
+        { name: 'Parker', gender: 'Boys', grade: 'TBD', coach: 'Tom Hughes', assistant: 'Ryan Mitchell', manager: 'Sarah Johnson' },
+        { name: 'Webb', gender: 'Boys', grade: 'Sunday U18 Boys C3 Grade', coach: 'Ryan Mitchell', assistant: 'Robert Taylor', manager: 'Emily Chen' },
+        { name: 'Delle Donne', gender: 'Girls', grade: 'Sunday U19 Girls A Grade', coach: 'Amanda White', assistant: 'Nicole Davis', manager: 'Lisa Taylor' },
+        { name: 'Fox', gender: 'Girls', grade: 'Sunday U19 Girls A Grade', coach: 'Nicole Davis', assistant: 'Amanda White', manager: 'Anna Garcia' }
+      ]
     }
-  ];
+  };
 
   const news = [
     {
@@ -76,6 +136,13 @@ const Homepage2 = memo(() => {
       date: '2 weeks ago'
     }
   ];
+
+  const handleTeamTabChange = (ageGroup, teamName) => {
+    setActiveTeamTab(prev => ({
+      ...prev,
+      [ageGroup]: teamName
+    }));
+  };
 
   return (
     <div>
@@ -118,60 +185,88 @@ const Homepage2 = memo(() => {
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
           <h2 className="text-xl font-bold text-center text-gray-900 mb-2">Coaches Corner</h2>
           <p className="text-center text-xs text-gray-600 mb-4 max-w-2xl mx-auto">
-            Our experienced coaching staff is dedicated to developing each player's potential.
+            Our experienced coaching staff is dedicated to developing each player's potential across all age groups.
           </p>
 
-          <div className="space-y-3">
-            {coachesByAge.map((group, index) => (
-              <Card key={index} className="bg-white shadow">
-                <CardContent className="p-4">
-                  <div className="mb-3">
-                    <h3 className="text-base font-bold text-gray-900 mb-1">{group.ageGroup} Teams</h3>
-                    <div className="flex flex-wrap gap-1">
-                      {group.teams.map((team, teamIndex) => (
-                        <Badge key={teamIndex} variant="outline" className="border-orange-200 text-orange-600 text-xs">
-                          {team}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-3">
-                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-3 rounded-lg">
-                      <h4 className="text-xs font-semibold text-orange-900 mb-2">Head Coach</h4>
-                      <p className="text-sm font-bold text-gray-900 mb-0.5">{group.headCoach.name}</p>
-                      <p className="text-xs text-gray-600 mb-0.5">{group.headCoach.experience}</p>
-                      <p className="text-xs text-orange-700">{group.headCoach.specialization}</p>
-                    </div>
-
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg">
-                      <h4 className="text-xs font-semibold text-blue-900 mb-2">Assistant Staff</h4>
-                      {group.assistants.map((assistant, assistantIndex) => (
-                        <div key={assistantIndex} className="mb-1">
-                          <p className="text-sm font-bold text-gray-900">{assistant.name}</p>
-                          <p className="text-xs text-blue-700">{assistant.role}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-3 rounded-lg">
-                      <h4 className="text-xs font-semibold text-gray-900 mb-2">Team Manager</h4>
-                      <p className="text-sm font-bold text-gray-900">{group.manager}</p>
-                      <p className="text-xs text-gray-600">Operations & Logistics</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs">
-                      Contact Team
-                    </Button>
-                    <Button size="sm" variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 text-xs">
-                      View Schedule
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+          {/* Age Group Tabs */}
+          <div className="flex overflow-x-auto space-x-1 mb-4 border-b border-gray-300 justify-center">
+            {['U8', 'U10', 'U12', 'U14', 'U16', 'U18'].map((age) => (
+              <button
+                key={age}
+                onClick={() => setActiveCoachesTab(age)}
+                className={`px-4 py-2 text-sm font-semibold transition-colors whitespace-nowrap ${
+                  activeCoachesTab === age
+                    ? 'text-orange-600 border-b-2 border-orange-600'
+                    : 'text-gray-600 hover:text-orange-500'
+                }`}
+              >
+                {age}
+              </button>
             ))}
+          </div>
+
+          {/* Teams Tabs within Age Group */}
+          <div className="mb-3">
+            <div className="flex overflow-x-auto space-x-1 mb-3 bg-white p-2 rounded-lg">
+              {coachesByAge[activeCoachesTab].teams.map((team) => (
+                <button
+                  key={team.name}
+                  onClick={() => handleTeamTabChange(activeCoachesTab, team.name)}
+                  className={`px-3 py-1.5 text-xs font-medium rounded transition-colors whitespace-nowrap ${
+                    activeTeamTab[activeCoachesTab] === team.name
+                      ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {team.name} ({team.gender})
+                </button>
+              ))}
+            </div>
+
+            {/* Team Details */}
+            {coachesByAge[activeCoachesTab].teams
+              .filter(team => team.name === activeTeamTab[activeCoachesTab])
+              .map((team) => (
+                <Card key={team.name} className="bg-white shadow">
+                  <CardContent className="p-4">
+                    <div className="mb-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-gray-900">{team.name}</h3>
+                        <Badge className="bg-gradient-to-r from-orange-500 to-blue-600 text-white">
+                          {activeCoachesTab} {team.gender}
+                        </Badge>
+                      </div>
+                      <p className="text-sm text-gray-600">{team.grade}</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-3">
+                      <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-3 rounded-lg">
+                        <h4 className="text-xs font-semibold text-orange-900 mb-2">Head Coach</h4>
+                        <p className="text-sm font-bold text-gray-900">{team.coach}</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg">
+                        <h4 className="text-xs font-semibold text-blue-900 mb-2">Assistant Coach</h4>
+                        <p className="text-sm font-bold text-gray-900">{team.assistant}</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-3 rounded-lg">
+                        <h4 className="text-xs font-semibold text-gray-900 mb-2">Team Manager</h4>
+                        <p className="text-sm font-bold text-gray-900">{team.manager}</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs">
+                        Contact Team
+                      </Button>
+                      <Button size="sm" variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 text-xs">
+                        View Schedule
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
           </div>
         </div>
       </section>
