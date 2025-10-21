@@ -231,67 +231,64 @@ const Homepage = memo(() => {
         </div>
       </section>
 
-      {/* Live Updates & Season Stats Section - Side by Side */}
+      {/* Live Updates Section */}
       <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
-          <div className="grid lg:grid-cols-2 gap-4">
-            {/* Live Updates */}
-            <div>
-              <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Live Updates</h2>
-              <div className="flex overflow-x-auto space-x-3 pb-2 scrollbar-hide">
-                {liveUpdates.map((update, index) => {
-                  const IconComponent = update.icon;
-                  return (
-                    <Card key={index} className="min-w-60 bg-white shadow hover:shadow-md transition-all">
-                      <CardContent className="p-3">
-                        <div className="flex items-center justify-between mb-2">
-                          <IconComponent className={`w-5 h-5 ${update.type === 'upcoming' ? 'text-blue-600' : update.type === 'score' ? 'text-orange-600' : 'text-yellow-600'}`} />
-                          <Badge variant={update.type === 'upcoming' ? 'default' : update.type === 'score' ? 'destructive' : 'secondary'} className="text-xs">
-                            {update.type === 'upcoming' ? 'Upcoming' : update.type === 'score' ? 'Result' : 'Player'}
-                          </Badge>
-                        </div>
-                        <h3 className="text-sm font-semibold text-gray-900 mb-1">{update.title}</h3>
-                        {update.time && <p className="text-xs text-gray-600 mb-0.5">In {update.time}</p>}
-                        {update.score && <p className="text-lg font-bold text-orange-600 mb-0.5">{update.score}</p>}
-                        {update.points && <p className="text-sm font-semibold text-blue-600">{update.points}</p>}
-                        {update.opponent && <p className="text-xs text-gray-600">vs {update.opponent}</p>}
-                        {update.location && <p className="text-xs text-gray-600">{update.location}</p>}
-                        {update.player && <p className="text-sm text-gray-900 font-medium">{update.player}</p>}
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
+          <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Live Updates</h2>
+          <div className="flex overflow-x-auto space-x-3 pb-2 scrollbar-hide">
+            {liveUpdates.map((update, index) => {
+              const IconComponent = update.icon;
+              return (
+                <Card key={index} className="min-w-60 bg-white shadow hover:shadow-md transition-all">
+                  <CardContent className="p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <IconComponent className={`w-5 h-5 ${update.type === 'upcoming' ? 'text-blue-600' : update.type === 'score' ? 'text-orange-600' : 'text-yellow-600'}`} />
+                      <Badge variant={update.type === 'upcoming' ? 'default' : update.type === 'score' ? 'destructive' : 'secondary'} className="text-xs">
+                        {update.type === 'upcoming' ? 'Upcoming' : update.type === 'score' ? 'Result' : 'Player'}
+                      </Badge>
+                    </div>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">{update.title}</h3>
+                    {update.time && <p className="text-xs text-gray-600 mb-0.5">In {update.time}</p>}
+                    {update.score && <p className="text-lg font-bold text-orange-600 mb-0.5">{update.score}</p>}
+                    {update.points && <p className="text-sm font-semibold text-blue-600">{update.points}</p>}
+                    {update.opponent && <p className="text-xs text-gray-600">vs {update.opponent}</p>}
+                    {update.location && <p className="text-xs text-gray-600">{update.location}</p>}
+                    {update.player && <p className="text-sm text-gray-900 font-medium">{update.player}</p>}
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-            {/* Season Stats */}
-            <div>
-              <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Season Stats</h2>
-              <div className="grid grid-cols-2 gap-3">
-                {seasonStats.map((stat, index) => {
-                  const IconComponent = stat.icon;
-                  return (
-                    <Card key={index} className="text-center bg-white shadow hover:shadow-md transition-all">
-                      <CardContent className="p-4">
-                        <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r ${stat.color === 'text-orange-600' ? 'from-orange-100 to-orange-200' : 'from-blue-100 to-blue-200'} mb-2`}>
-                          <IconComponent className={`w-5 h-5 ${stat.color}`} />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                          {stat.value}{stat.suffix || ''}
-                        </h3>
-                        <p className="text-xs text-gray-600 font-medium">{stat.label}</p>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
+      {/* Season Stats - Full Width */}
+      <section className="py-6 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4">
+          <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Season Stats</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {seasonStats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <Card key={index} className="text-center bg-white shadow hover:shadow-md transition-all">
+                  <CardContent className="p-3">
+                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r ${stat.color === 'text-orange-600' ? 'from-orange-100 to-orange-200' : 'from-blue-100 to-blue-200'} mb-2`}>
+                      <IconComponent className={`w-5 h-5 ${stat.color}`} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                      {stat.value}{stat.suffix || ''}
+                    </h3>
+                    <p className="text-xs text-gray-600 font-medium">{stat.label}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Season Standings Section */}
-      <section className="py-6 bg-white">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
           <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Season Standings</h2>
           <div className="grid lg:grid-cols-2 gap-4">
@@ -349,10 +346,10 @@ const Homepage = memo(() => {
               <CardContent className="p-4">
                 <h3 className="text-base font-bold text-gray-900 mb-3">Team Ladder</h3>
 
-                {/* Table Header */}
-                <div className="overflow-x-auto">
+                {/* Table with fixed height and scroll */}
+                <div className="overflow-auto max-h-[280px]">
                   <table className="w-full text-xs">
-                    <thead>
+                    <thead className="sticky top-0 bg-white">
                       <tr className="border-b border-gray-200">
                         <th className="text-left py-2 px-1 font-semibold text-gray-700">Pos</th>
                         <th className="text-left py-2 px-1 font-semibold text-gray-700">Team</th>
@@ -410,7 +407,7 @@ const Homepage = memo(() => {
       </section>
 
       {/* Team Highlights Grid - Compact */}
-      <section id="teams" className="py-6 bg-gray-50">
+      <section id="teams" className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
           <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Our Teams</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
