@@ -1,17 +1,10 @@
 import React, { memo } from 'react';
-import { Trophy, Calendar, Target, Users, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Trophy, Target, Users, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 
 const Homepage2 = memo(() => {
-  const seasonStats = [
-    { label: 'Total Players', value: 87, icon: Users, color: 'text-orange-600' },
-    { label: 'Games Played', value: 156, icon: Calendar, color: 'text-blue-600' },
-    { label: 'Win Rate', value: 78, icon: Trophy, color: 'text-orange-600', suffix: '%' },
-    { label: 'Points Scored', value: 8924, icon: Target, color: 'text-blue-600' }
-  ];
-
   const leadership = [
     {
       name: 'David Martinez',
@@ -86,31 +79,6 @@ const Homepage2 = memo(() => {
 
   return (
     <div>
-      {/* Season Summary - Compact */}
-      <section className="py-6 bg-gradient-to-r from-orange-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4">
-          <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Season Summary</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {seasonStats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <Card key={index} className="text-center bg-white shadow hover:shadow-md transition-all">
-                  <CardContent className="p-4">
-                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r ${stat.color === 'text-orange-600' ? 'from-orange-100 to-orange-200' : 'from-blue-100 to-blue-200'} mb-2`}>
-                      <IconComponent className={`w-5 h-5 ${stat.color}`} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}{stat.suffix || ''}
-                    </h3>
-                    <p className="text-xs text-gray-600 font-medium">{stat.label}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Team - Compact */}
       <section id="about" className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">

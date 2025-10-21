@@ -1,5 +1,5 @@
 import React, { useState, useEffect, memo } from 'react';
-import { ChevronLeft, ChevronRight, Clock, Trophy, Users, Target, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, Trophy, Users, Target, Star, Calendar } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -7,6 +7,7 @@ import { Badge } from './ui/badge';
 const Homepage = memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeScorersTab, setActiveScorersTab] = useState('U8');
 
   const heroImages = [
     {
@@ -32,6 +33,55 @@ const Homepage = memo(() => {
     { type: 'scorer', title: 'Top Scorer', player: 'Jake Thompson', points: '24 pts', icon: Star },
     { type: 'upcoming', title: 'U10 vs Lions', time: '5 days, 3 hours', location: 'Away', icon: Clock },
     { type: 'score', title: 'U14 Victory', score: '42-38', opponent: 'City Sharks', icon: Trophy }
+  ];
+
+  const seasonStats = [
+    { label: 'Total Players', value: 87, icon: Users, color: 'text-orange-600' },
+    { label: 'Games Played', value: 156, icon: Calendar, color: 'text-blue-600' },
+    { label: 'Win Rate', value: 78, icon: Trophy, color: 'text-orange-600', suffix: '%' },
+    { label: 'Points Scored', value: 8924, icon: Target, color: 'text-blue-600' }
+  ];
+
+  const topScorers = {
+    U8: [
+      { rank: 1, name: 'Tommy Chen', team: 'Little Dribblers', points: 156, games: 12 },
+      { rank: 2, name: 'Emma Davis', team: 'Little Dribblers', points: 142, games: 12 },
+      { rank: 3, name: 'Lucas Brown', team: 'Little Dribblers', points: 128, games: 11 }
+    ],
+    U10: [
+      { rank: 1, name: 'Michael Zhang', team: 'Mini Ballers', points: 284, games: 15 },
+      { rank: 2, name: 'Sophie Wilson', team: 'Mini Ballers', points: 267, games: 15 },
+      { rank: 3, name: 'Ryan Martinez', team: 'Mini Ballers', points: 245, games: 14 }
+    ],
+    U12: [
+      { rank: 1, name: 'Alex Johnson', team: 'Rising Stars', points: 412, games: 18 },
+      { rank: 2, name: 'Maya Patel', team: 'Rising Stars', points: 398, games: 18 },
+      { rank: 3, name: 'Connor Smith', team: 'Rising Stars', points: 376, games: 17 }
+    ],
+    U14: [
+      { rank: 1, name: 'Jordan Lee', team: 'Court Warriors', points: 486, games: 16 },
+      { rank: 2, name: 'Isabella Garcia', team: 'Court Warriors', points: 468, games: 16 },
+      { rank: 3, name: 'Ethan Taylor', team: 'Court Warriors', points: 445, games: 15 }
+    ],
+    U16: [
+      { rank: 1, name: 'Jake Thompson', team: 'Elite Squad', points: 524, games: 14 },
+      { rank: 2, name: 'Olivia Anderson', team: 'Elite Squad', points: 502, games: 14 },
+      { rank: 3, name: 'Noah White', team: 'Elite Squad', points: 487, games: 13 }
+    ],
+    U18: [
+      { rank: 1, name: 'Marcus Johnson', team: 'Championship Team', points: 568, games: 12 },
+      { rank: 2, name: 'Sophia Rodriguez', team: 'Championship Team', points: 542, games: 12 },
+      { rank: 3, name: 'Daniel Kim', team: 'Championship Team', points: 521, games: 11 }
+    ]
+  };
+
+  const teamLadder = [
+    { pos: 1, team: 'Elite Squad', age: 'U16', played: 24, wins: 22, losses: 2, pointsFor: 1856, lastThree: ['W', 'W', 'W'] },
+    { pos: 2, team: 'Championship Team', age: 'U18', played: 22, wins: 20, losses: 2, pointsFor: 1742, lastThree: ['W', 'W', 'W'] },
+    { pos: 3, team: 'Rising Stars', age: 'U12', played: 26, wins: 21, losses: 5, pointsFor: 1698, lastThree: ['W', 'L', 'W'] },
+    { pos: 4, team: 'Court Warriors', age: 'U14', played: 24, wins: 19, losses: 5, pointsFor: 1645, lastThree: ['W', 'W', 'L'] },
+    { pos: 5, team: 'Mini Ballers', age: 'U10', played: 20, wins: 16, losses: 4, pointsFor: 1432, lastThree: ['W', 'W', 'W'] },
+    { pos: 6, team: 'Little Dribblers', age: 'U8', played: 18, wins: 14, losses: 4, pointsFor: 1286, lastThree: ['L', 'W', 'W'] }
   ];
 
   const teams = [
@@ -181,39 +231,186 @@ const Homepage = memo(() => {
         </div>
       </section>
 
-      {/* Live Updates Section - Compact */}
+      {/* Live Updates & Season Stats Section - Side by Side */}
       <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
-          <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Live Updates</h2>
-          <div className="flex overflow-x-auto space-x-3 pb-2 scrollbar-hide">
-            {liveUpdates.map((update, index) => {
-              const IconComponent = update.icon;
-              return (
-                <Card key={index} className="min-w-60 bg-white shadow hover:shadow-md transition-all">
-                  <CardContent className="p-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <IconComponent className={`w-5 h-5 ${update.type === 'upcoming' ? 'text-blue-600' : update.type === 'score' ? 'text-orange-600' : 'text-yellow-600'}`} />
-                      <Badge variant={update.type === 'upcoming' ? 'default' : update.type === 'score' ? 'destructive' : 'secondary'} className="text-xs">
-                        {update.type === 'upcoming' ? 'Upcoming' : update.type === 'score' ? 'Result' : 'Player'}
-                      </Badge>
+          <div className="grid lg:grid-cols-2 gap-4">
+            {/* Live Updates */}
+            <div>
+              <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Live Updates</h2>
+              <div className="flex overflow-x-auto space-x-3 pb-2 scrollbar-hide">
+                {liveUpdates.map((update, index) => {
+                  const IconComponent = update.icon;
+                  return (
+                    <Card key={index} className="min-w-60 bg-white shadow hover:shadow-md transition-all">
+                      <CardContent className="p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <IconComponent className={`w-5 h-5 ${update.type === 'upcoming' ? 'text-blue-600' : update.type === 'score' ? 'text-orange-600' : 'text-yellow-600'}`} />
+                          <Badge variant={update.type === 'upcoming' ? 'default' : update.type === 'score' ? 'destructive' : 'secondary'} className="text-xs">
+                            {update.type === 'upcoming' ? 'Upcoming' : update.type === 'score' ? 'Result' : 'Player'}
+                          </Badge>
+                        </div>
+                        <h3 className="text-sm font-semibold text-gray-900 mb-1">{update.title}</h3>
+                        {update.time && <p className="text-xs text-gray-600 mb-0.5">In {update.time}</p>}
+                        {update.score && <p className="text-lg font-bold text-orange-600 mb-0.5">{update.score}</p>}
+                        {update.points && <p className="text-sm font-semibold text-blue-600">{update.points}</p>}
+                        {update.opponent && <p className="text-xs text-gray-600">vs {update.opponent}</p>}
+                        {update.location && <p className="text-xs text-gray-600">{update.location}</p>}
+                        {update.player && <p className="text-sm text-gray-900 font-medium">{update.player}</p>}
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Season Stats */}
+            <div>
+              <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Season Stats</h2>
+              <div className="grid grid-cols-2 gap-3">
+                {seasonStats.map((stat, index) => {
+                  const IconComponent = stat.icon;
+                  return (
+                    <Card key={index} className="text-center bg-white shadow hover:shadow-md transition-all">
+                      <CardContent className="p-4">
+                        <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r ${stat.color === 'text-orange-600' ? 'from-orange-100 to-orange-200' : 'from-blue-100 to-blue-200'} mb-2`}>
+                          <IconComponent className={`w-5 h-5 ${stat.color}`} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                          {stat.value}{stat.suffix || ''}
+                        </h3>
+                        <p className="text-xs text-gray-600 font-medium">{stat.label}</p>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Season Standings Section */}
+      <section className="py-6 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4">
+          <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Season Standings</h2>
+          <div className="grid lg:grid-cols-2 gap-4">
+            {/* Top Scorers */}
+            <Card className="bg-white shadow">
+              <CardContent className="p-4">
+                <h3 className="text-base font-bold text-gray-900 mb-3">Top Scorers</h3>
+
+                {/* Tabs */}
+                <div className="flex overflow-x-auto space-x-1 mb-3 border-b border-gray-200">
+                  {['U8', 'U10', 'U12', 'U14', 'U16', 'U18'].map((age) => (
+                    <button
+                      key={age}
+                      onClick={() => setActiveScorersTab(age)}
+                      className={`px-3 py-1 text-xs font-medium transition-colors ${
+                        activeScorersTab === age
+                          ? 'text-orange-600 border-b-2 border-orange-600'
+                          : 'text-gray-600 hover:text-orange-500'
+                      }`}
+                    >
+                      {age}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Scorers List */}
+                <div className="space-y-2">
+                  {topScorers[activeScorersTab].map((scorer) => (
+                    <div key={scorer.rank} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold ${
+                          scorer.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                          scorer.rank === 2 ? 'bg-gray-300 text-gray-900' :
+                          'bg-orange-300 text-orange-900'
+                        }`}>
+                          {scorer.rank}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-gray-900">{scorer.name}</p>
+                          <p className="text-xs text-gray-600">{scorer.team}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm font-bold text-orange-600">{scorer.points}</p>
+                        <p className="text-xs text-gray-500">{scorer.games} games</p>
+                      </div>
                     </div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">{update.title}</h3>
-                    {update.time && <p className="text-xs text-gray-600 mb-0.5">In {update.time}</p>}
-                    {update.score && <p className="text-lg font-bold text-orange-600 mb-0.5">{update.score}</p>}
-                    {update.points && <p className="text-sm font-semibold text-blue-600">{update.points}</p>}
-                    {update.opponent && <p className="text-xs text-gray-600">vs {update.opponent}</p>}
-                    {update.location && <p className="text-xs text-gray-600">{update.location}</p>}
-                    {update.player && <p className="text-sm text-gray-900 font-medium">{update.player}</p>}
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Team Ladder */}
+            <Card className="bg-white shadow">
+              <CardContent className="p-4">
+                <h3 className="text-base font-bold text-gray-900 mb-3">Team Ladder</h3>
+
+                {/* Table Header */}
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-2 px-1 font-semibold text-gray-700">Pos</th>
+                        <th className="text-left py-2 px-1 font-semibold text-gray-700">Team</th>
+                        <th className="text-center py-2 px-1 font-semibold text-gray-700">P</th>
+                        <th className="text-center py-2 px-1 font-semibold text-gray-700">W-L</th>
+                        <th className="text-center py-2 px-1 font-semibold text-gray-700">PF</th>
+                        <th className="text-center py-2 px-1 font-semibold text-gray-700">L3</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {teamLadder.map((team) => (
+                        <tr key={team.pos} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                          <td className="py-2 px-1">
+                            <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-bold ${
+                              team.pos === 1 ? 'bg-yellow-400 text-yellow-900' :
+                              team.pos === 2 ? 'bg-gray-300 text-gray-900' :
+                              team.pos === 3 ? 'bg-orange-300 text-orange-900' :
+                              'bg-gray-100 text-gray-700'
+                            }`}>
+                              {team.pos}
+                            </span>
+                          </td>
+                          <td className="py-2 px-1">
+                            <p className="font-semibold text-gray-900">{team.team}</p>
+                            <p className="text-xs text-gray-500">{team.age}</p>
+                          </td>
+                          <td className="text-center py-2 px-1 text-gray-700">{team.played}</td>
+                          <td className="text-center py-2 px-1">
+                            <span className="font-semibold text-gray-900">{team.wins}-{team.losses}</span>
+                          </td>
+                          <td className="text-center py-2 px-1 font-semibold text-orange-600">{team.pointsFor}</td>
+                          <td className="text-center py-2 px-1">
+                            <div className="flex justify-center space-x-0.5">
+                              {team.lastThree.map((result, idx) => (
+                                <span
+                                  key={idx}
+                                  className={`w-4 h-4 flex items-center justify-center rounded text-xs font-bold ${
+                                    result === 'W' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+                                  }`}
+                                >
+                                  {result}
+                                </span>
+                              ))}
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Team Highlights Grid - Compact */}
-      <section id="teams" className="py-6 bg-white">
+      <section id="teams" className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
           <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Our Teams</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
