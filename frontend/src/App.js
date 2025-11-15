@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Homepage2 from "./components/Homepage2";
+import TeamPage from "./components/TeamPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Homepage2 />
             </div>
           } />
+          <Route path="/team/:teamName" element={<TeamPage />} />
         </Routes>
       </BrowserRouter>
     </div>

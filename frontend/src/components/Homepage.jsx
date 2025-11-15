@@ -1,10 +1,12 @@
 import React, { useState, useEffect, memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Clock, Trophy, Users, Target, Star, Calendar } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 
 const Homepage = memo(() => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeScorersTab, setActiveScorersTab] = useState('U8');
@@ -539,7 +541,10 @@ const Homepage = memo(() => {
                       Players: {team.players}
                     </p>
                   </div>
-                  <Button className="w-full mt-2 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-xs py-1">
+                  <Button
+                    onClick={() => navigate(`/team/${team.name}`)}
+                    className="w-full mt-2 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-xs py-1"
+                  >
                     View Team
                   </Button>
                 </CardContent>
