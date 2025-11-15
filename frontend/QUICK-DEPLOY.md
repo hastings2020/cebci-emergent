@@ -1,6 +1,18 @@
 # Quick Deployment Guide
 
-## 🚀 Deploy in 3 Steps
+## 📌 Choose Your Deployment Method
+
+### Option 1: Versioned Deployment (Recommended)
+Maintains version history, allows rollbacks
+→ See `VERSIONED-DEPLOYMENT-GUIDE.md`
+
+### Option 2: Simple Deployment
+Single version, no rollback capability
+→ Continue below
+
+---
+
+## 🚀 Simple Deploy in 3 Steps
 
 ### 1. Configure AWS CLI (One-time setup)
 ```bash
