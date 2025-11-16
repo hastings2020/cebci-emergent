@@ -48,10 +48,10 @@ const Homepage = memo(() => {
   ];
 
   const seasonStats = [
-    { label: 'Total Players', value: 520, icon: Users, color: 'text-orange-600' },
-    { label: 'Games Played', value: 342, icon: Calendar, color: 'text-blue-600' },
-    { label: 'Win Rate', value: 68, icon: Trophy, color: 'text-orange-600', suffix: '%' },
-    { label: 'Points Scored', value: 18456, icon: Target, color: 'text-blue-600' }
+    { label: 'Total Players', value: 520, icon: Users, color: 'text-amber-600' },
+    { label: 'Games Played', value: 342, icon: Calendar, color: 'text-green-600' },
+    { label: 'Win Rate', value: 68, icon: Trophy, color: 'text-amber-600', suffix: '%' },
+    { label: 'Points Scored', value: 18456, icon: Target, color: 'text-green-600' }
   ];
 
   const topScorers = {
@@ -210,12 +210,12 @@ const Homepage = memo(() => {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <button onClick={scrollToTeams} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Teams</button>
-              <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</button>
-              <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</button>
-              <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</button>
-              <button onClick={() => navigate('/contact')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</button>
-              <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
+              <button onClick={scrollToTeams} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">Teams</button>
+              <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">Training</button>
+              <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">News</button>
+              <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">About</button>
+              <button onClick={() => navigate('/contact')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">Contact</button>
+              <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-amber-500 to-green-600 text-white px-4 py-1 text-sm rounded-full">
                 Join
               </Button>
             </div>
@@ -237,12 +237,12 @@ const Homepage = memo(() => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-3 py-2 space-y-1">
-              <button onClick={scrollToTeams} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Teams</button>
-              <button onClick={() => { navigate('/training'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Training</button>
-              <button onClick={() => { navigate('/news'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">News</button>
-              <button onClick={() => { navigate('/about'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
-              <button onClick={() => { navigate('/contact'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Contact</button>
-              <Button onClick={() => { navigate('/registration'); setIsMenuOpen(false); }} className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
+              <button onClick={scrollToTeams} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">Teams</button>
+              <button onClick={() => { navigate('/training'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">Training</button>
+              <button onClick={() => { navigate('/news'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">News</button>
+              <button onClick={() => { navigate('/about'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">About</button>
+              <button onClick={() => { navigate('/contact'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">Contact</button>
+              <Button onClick={() => { navigate('/registration'); setIsMenuOpen(false); }} className="w-full mt-1 bg-gradient-to-r from-amber-500 to-green-600 text-white text-sm rounded-full">
                 Join Now
               </Button>
             </div>
@@ -276,7 +276,7 @@ const Homepage = memo(() => {
             <div className="max-w-xl">
               <h1 className="text-2xl md:text-4xl font-bold text-white mb-2">
                 Welcome to<br />
-                <span className="bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-amber-400 to-green-400 bg-clip-text text-transparent">
                   Cranbourne Eagles Basketball Club
                 </span>
               </h1>
@@ -284,7 +284,7 @@ const Homepage = memo(() => {
                 {heroImages[currentSlide].subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-2">
-                <Button onClick={() => navigate('/registration')} size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm">
+                <Button onClick={() => navigate('/registration')} size="sm" className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-4 py-2 rounded-full text-sm">
                   Join Our Team
                 </Button>
                 <Button onClick={() => navigate('/training')} size="sm" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
@@ -335,15 +335,15 @@ const Homepage = memo(() => {
                 <Card key={index} className="min-w-56 bg-white shadow hover:shadow-md transition-all">
                   <CardContent className="p-2">
                     <div className="flex items-center justify-between mb-1">
-                      <IconComponent className={`w-4 h-4 ${update.type === 'upcoming' ? 'text-blue-600' : update.type === 'score' ? 'text-orange-600' : 'text-yellow-600'}`} />
+                      <IconComponent className={`w-4 h-4 ${update.type === 'upcoming' ? 'text-green-600' : update.type === 'score' ? 'text-amber-600' : 'text-yellow-600'}`} />
                       <Badge variant={update.type === 'upcoming' ? 'default' : update.type === 'score' ? 'destructive' : 'secondary'} className="text-xs py-0 px-1">
                         {update.type === 'upcoming' ? 'Upcoming' : update.type === 'score' ? 'Result' : 'Player'}
                       </Badge>
                     </div>
                     <h3 className="text-xs font-semibold text-gray-900 mb-1">{update.title}</h3>
                     {update.time && <p className="text-xs text-gray-600 mb-0.5">In {update.time}</p>}
-                    {update.score && <p className="text-base font-bold text-orange-600 mb-0.5">{update.score}</p>}
-                    {update.points && <p className="text-xs font-semibold text-blue-600">{update.points}</p>}
+                    {update.score && <p className="text-base font-bold text-amber-600 mb-0.5">{update.score}</p>}
+                    {update.points && <p className="text-xs font-semibold text-green-600">{update.points}</p>}
                     {update.opponent && <p className="text-xs text-gray-600">vs {update.opponent}</p>}
                     {update.location && <p className="text-xs text-gray-600">{update.location}</p>}
                     {update.player && <p className="text-xs text-gray-900 font-medium">{update.player}</p>}
@@ -365,7 +365,7 @@ const Homepage = memo(() => {
               return (
                 <Card key={index} className="text-center bg-white shadow hover:shadow-md transition-all">
                   <CardContent className="p-2">
-                    <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r ${stat.color === 'text-orange-600' ? 'from-orange-100 to-orange-200' : 'from-blue-100 to-blue-200'} mb-1`}>
+                    <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r ${stat.color === 'text-amber-600' ? 'from-amber-100 to-amber-200' : 'from-green-100 to-green-200'} mb-1`}>
                       <IconComponent className={`w-4 h-4 ${stat.color}`} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-0.5">
@@ -398,8 +398,8 @@ const Homepage = memo(() => {
                       onClick={() => setActiveScorersTab(age)}
                       className={`px-3 py-1 text-xs font-medium transition-colors ${
                         activeScorersTab === age
-                          ? 'text-orange-600 border-b-2 border-orange-600'
-                          : 'text-gray-600 hover:text-orange-500'
+                          ? 'text-amber-600 border-b-2 border-amber-600'
+                          : 'text-gray-600 hover:text-amber-500'
                       }`}
                     >
                       {age}
@@ -415,7 +415,7 @@ const Homepage = memo(() => {
                         <div className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold ${
                           scorer.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
                           scorer.rank === 2 ? 'bg-gray-300 text-gray-900' :
-                          'bg-orange-300 text-orange-900'
+                          'bg-amber-300 text-orange-900'
                         }`}>
                           {scorer.rank}
                         </div>
@@ -425,7 +425,7 @@ const Homepage = memo(() => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-bold text-orange-600">{scorer.points}</p>
+                        <p className="text-sm font-bold text-amber-600">{scorer.points}</p>
                         <p className="text-xs text-gray-500">{scorer.games} games</p>
                       </div>
                     </div>
@@ -459,7 +459,7 @@ const Homepage = memo(() => {
                             <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-bold ${
                               team.pos === 1 ? 'bg-yellow-400 text-yellow-900' :
                               team.pos === 2 ? 'bg-gray-300 text-gray-900' :
-                              team.pos === 3 ? 'bg-orange-300 text-orange-900' :
+                              team.pos === 3 ? 'bg-amber-300 text-orange-900' :
                               'bg-gray-100 text-gray-700'
                             }`}>
                               {team.pos}
@@ -473,7 +473,7 @@ const Homepage = memo(() => {
                           <td className="text-center py-2 px-1">
                             <span className="font-semibold text-gray-900">{team.wins}-{team.losses}</span>
                           </td>
-                          <td className="text-center py-2 px-1 font-semibold text-orange-600">{team.pointsFor}</td>
+                          <td className="text-center py-2 px-1 font-semibold text-amber-600">{team.pointsFor}</td>
                           <td className="text-center py-2 px-1">
                             <div className="flex justify-center space-x-0.5">
                               {team.lastThree.map((result, idx) => (
@@ -512,8 +512,8 @@ const Homepage = memo(() => {
                 onClick={() => setActiveTeamsTab(age)}
                 className={`px-4 py-2 text-sm font-semibold transition-colors whitespace-nowrap ${
                   activeTeamsTab === age
-                    ? 'text-orange-600 border-b-2 border-orange-600'
-                    : 'text-gray-600 hover:text-orange-500'
+                    ? 'text-amber-600 border-b-2 border-amber-600'
+                    : 'text-gray-600 hover:text-amber-500'
                 }`}
               >
                 {age}
@@ -533,7 +533,7 @@ const Homepage = memo(() => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute top-2 left-2">
-                    <Badge className="bg-gradient-to-r from-orange-500 to-blue-600 text-white text-xs">
+                    <Badge className="bg-gradient-to-r from-amber-500 to-green-600 text-white text-xs">
                       {team.age} {team.gender}
                     </Badge>
                   </div>
@@ -542,17 +542,17 @@ const Homepage = memo(() => {
                   <h3 className="text-sm font-bold text-gray-900 mb-1">{team.name}</h3>
                   <div className="space-y-1 text-gray-600 text-xs">
                     <p className="flex items-center">
-                      <Users className="w-3 h-3 mr-1 text-orange-500" />
+                      <Users className="w-3 h-3 mr-1 text-amber-500" />
                       Coach: {team.coach}
                     </p>
                     <p className="flex items-center">
-                      <Target className="w-3 h-3 mr-1 text-blue-500" />
+                      <Target className="w-3 h-3 mr-1 text-green-500" />
                       Players: {team.players}
                     </p>
                   </div>
                   <Button
                     onClick={() => navigate(`/team/${team.name}`)}
-                    className="w-full mt-2 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-xs py-1"
+                    className="w-full mt-2 bg-gradient-to-r from-amber-500 to-green-600 text-white text-xs py-1"
                   >
                     View Team
                   </Button>

@@ -49,10 +49,10 @@ const ContactPage = memo(() => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-green-50 flex items-center justify-center p-4">
         <Card className="max-w-md w-full shadow-2xl border-0">
           <CardContent className="p-8 text-center">
-            <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 bg-gradient-to-r from-amber-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-12 h-12 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
@@ -62,14 +62,14 @@ const ContactPage = memo(() => {
             <div className="space-y-3">
               <Button
                 onClick={() => navigate('/')}
-                className="w-full bg-gradient-to-r from-orange-500 to-blue-600 text-white"
+                className="w-full bg-gradient-to-r from-amber-500 to-green-600 text-white"
               >
                 Back to Home
               </Button>
               <Button
                 onClick={() => setSubmitted(false)}
                 variant="outline"
-                className="w-full border-2 border-orange-500 text-orange-600 hover:bg-orange-50"
+                className="w-full border-2 border-amber-500 text-amber-600 hover:bg-amber-50"
               >
                 Submit Another Enquiry
               </Button>
@@ -81,12 +81,12 @@ const ContactPage = memo(() => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-green-50">
       {/* Navigation */}
       <Navigation />
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-orange-500 to-blue-600 text-white py-12">
+      <div className="bg-gradient-to-r from-amber-500 to-green-600 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
@@ -105,7 +105,7 @@ const ContactPage = memo(() => {
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -116,7 +116,7 @@ const ContactPage = memo(() => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -127,7 +127,7 @@ const ContactPage = memo(() => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -141,14 +141,14 @@ const ContactPage = memo(() => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-orange-500 to-blue-600 text-white shadow-lg border-0">
+            <Card className="bg-gradient-to-br from-amber-500 to-green-600 text-white shadow-lg border-0">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-3">Quick Enquiry?</h3>
                 <p className="text-white/90 text-sm mb-4">
                   For urgent matters or immediate assistance, give us a call. Our friendly staff are ready to help!
                 </p>
                 <Button
-                  className="w-full bg-white text-orange-600 hover:bg-gray-100"
+                  className="w-full bg-white text-amber-600 hover:bg-gray-100"
                   onClick={() => window.location.href = 'tel:5551234'}
                 >
                   <Phone className="w-4 h-4 mr-2" />
@@ -175,7 +175,7 @@ const ContactPage = memo(() => {
                       value={formData.enquiryType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
                     >
                       <option value="general">General Enquiry</option>
                       <option value="registration">Registration Information</option>
@@ -202,7 +202,7 @@ const ContactPage = memo(() => {
                           onChange={handleChange}
                           required
                           placeholder="John"
-                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none"
+                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
                         />
                       </div>
                     </div>
@@ -220,7 +220,7 @@ const ContactPage = memo(() => {
                           onChange={handleChange}
                           required
                           placeholder="Doe"
-                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none"
+                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
                         />
                       </div>
                     </div>
@@ -241,7 +241,7 @@ const ContactPage = memo(() => {
                           onChange={handleChange}
                           required
                           placeholder="john.doe@email.com"
-                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none"
+                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
                         />
                       </div>
                     </div>
@@ -258,7 +258,7 @@ const ContactPage = memo(() => {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="0412 345 678"
-                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none"
+                          className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
                         />
                       </div>
                     </div>
@@ -276,7 +276,7 @@ const ContactPage = memo(() => {
                       onChange={handleChange}
                       required
                       placeholder="e.g., Information about U12 Boys registration"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
                     />
                   </div>
 
@@ -294,7 +294,7 @@ const ContactPage = memo(() => {
                         required
                         rows="6"
                         placeholder="Tell us more about your enquiry..."
-                        className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none resize-none"
+                        className="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all outline-none resize-none"
                       />
                     </div>
                   </div>
@@ -306,7 +306,7 @@ const ContactPage = memo(() => {
                     </p>
                     <Button
                       type="submit"
-                      className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-8 py-3 text-lg font-semibold hover:shadow-lg transition-all"
+                      className="bg-gradient-to-r from-amber-500 to-green-600 text-white px-8 py-3 text-lg font-semibold hover:shadow-lg transition-all"
                     >
                       <Send className="w-5 h-5 mr-2" />
                       Send Message

@@ -18,7 +18,7 @@ const NewsDetailPage = memo(() => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Article Not Found</h1>
-          <Button onClick={() => navigate('/news')} className="bg-gradient-to-r from-orange-500 to-blue-600">
+          <Button onClick={() => navigate('/news')} className="bg-gradient-to-r from-amber-500 to-green-600">
             View All News
           </Button>
         </div>
@@ -42,8 +42,8 @@ const NewsDetailPage = memo(() => {
         {/* Header */}
         <div className="mb-6">
           <Badge className={`${
-            article.category === 'Training' ? 'bg-orange-500' :
-            article.category === 'Games' ? 'bg-blue-500' : 'bg-green-500'
+            article.category === 'Training' ? 'bg-amber-500' :
+            article.category === 'Games' ? 'bg-green-500' : 'bg-green-500'
           } text-white mb-4`}>
             {article.category}
           </Badge>
@@ -108,7 +108,7 @@ const NewsDetailPage = memo(() => {
         <div className="pt-8 border-t border-gray-200">
           <Button
             onClick={() => navigate('/news')}
-            className="bg-gradient-to-r from-orange-500 to-blue-600 text-white"
+            className="bg-gradient-to-r from-amber-500 to-green-600 text-white"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to All News
@@ -135,8 +135,8 @@ const NewsDetailPage = memo(() => {
                   />
                   <div className="p-4">
                     <Badge className={`${
-                      relatedArticle.category === 'Training' ? 'bg-orange-500' :
-                      relatedArticle.category === 'Games' ? 'bg-blue-500' : 'bg-green-500'
+                      relatedArticle.category === 'Training' ? 'bg-amber-500' :
+                      relatedArticle.category === 'Games' ? 'bg-green-500' : 'bg-green-500'
                     } text-white mb-2 text-xs`}>
                       {relatedArticle.category}
                     </Badge>

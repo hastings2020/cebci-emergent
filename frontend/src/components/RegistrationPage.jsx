@@ -78,23 +78,23 @@ const RegistrationPage = memo(() => {
               <p className="text-lg text-gray-600 mb-6">
                 Thank you for registering with Cranbourne Eagles Basketball Club!
               </p>
-              <div className="bg-blue-50 rounded-lg p-6 mb-6 text-left">
+              <div className="bg-green-50 rounded-lg p-6 mb-6 text-left">
                 <h3 className="font-bold text-gray-900 mb-2">What happens next?</h3>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">•</span>
+                    <span className="text-amber-600 mr-2">•</span>
                     <span>Our team will review your registration within 24-48 hours</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">•</span>
+                    <span className="text-amber-600 mr-2">•</span>
                     <span>You'll receive a confirmation email at <strong>{formData.email}</strong></span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">•</span>
+                    <span className="text-amber-600 mr-2">•</span>
                     <span>We'll contact you with team placement and payment details</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">•</span>
+                    <span className="text-amber-600 mr-2">•</span>
                     <span>Look out for an invitation to attend a trial session</span>
                   </li>
                 </ul>
@@ -102,7 +102,7 @@ const RegistrationPage = memo(() => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   onClick={() => navigate('/')}
-                  className="bg-gradient-to-r from-orange-500 to-blue-600 text-white"
+                  className="bg-gradient-to-r from-amber-500 to-green-600 text-white"
                 >
                   Return Home
                 </Button>
@@ -136,10 +136,10 @@ const RegistrationPage = memo(() => {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-orange-600 to-blue-600 text-white py-12">
+      <div className="bg-gradient-to-r from-amber-600 to-green-600 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Player Registration</h1>
-          <p className="text-xl text-orange-100">
+          <p className="text-xl text-amber-100">
             Join the Cranbourne Eagles family and start your basketball journey!
           </p>
         </div>
@@ -152,7 +152,7 @@ const RegistrationPage = memo(() => {
           <Card className="mb-6">
             <CardContent className="p-6">
               <div className="flex items-center mb-6">
-                <User className="w-6 h-6 text-orange-600 mr-2" />
+                <User className="w-6 h-6 text-amber-600 mr-2" />
                 <h2 className="text-2xl font-bold text-gray-900">Player Information</h2>
               </div>
 
@@ -165,7 +165,7 @@ const RegistrationPage = memo(() => {
                     value={formData.playerFirstName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -177,7 +177,7 @@ const RegistrationPage = memo(() => {
                     value={formData.playerLastName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -189,7 +189,7 @@ const RegistrationPage = memo(() => {
                     value={formData.dateOfBirth}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -200,7 +200,7 @@ const RegistrationPage = memo(() => {
                     value={formData.gender}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   >
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
@@ -216,7 +216,7 @@ const RegistrationPage = memo(() => {
                     value={formData.ageGroup}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   >
                     <option value="">Select Age Group</option>
                     <option value="U8">U8 (Under 8)</option>
@@ -235,7 +235,7 @@ const RegistrationPage = memo(() => {
                     value={formData.shirtSize}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   >
                     <option value="">Select Size</option>
                     <option value="6">Size 6</option>
@@ -257,7 +257,7 @@ const RegistrationPage = memo(() => {
                     value={formData.experienceLevel}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   >
                     <option value="">Select Experience Level</option>
                     <option value="Beginner">Beginner - Never played before</option>
@@ -275,7 +275,7 @@ const RegistrationPage = memo(() => {
                     onChange={handleChange}
                     rows="3"
                     placeholder="Please list any medical conditions, allergies, or special requirements"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -286,7 +286,7 @@ const RegistrationPage = memo(() => {
           <Card className="mb-6">
             <CardContent className="p-6">
               <div className="flex items-center mb-6">
-                <Users className="w-6 h-6 text-orange-600 mr-2" />
+                <Users className="w-6 h-6 text-amber-600 mr-2" />
                 <h2 className="text-2xl font-bold text-gray-900">Parent/Guardian Information</h2>
               </div>
 
@@ -299,7 +299,7 @@ const RegistrationPage = memo(() => {
                     value={formData.parentFirstName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -311,7 +311,7 @@ const RegistrationPage = memo(() => {
                     value={formData.parentLastName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -322,7 +322,7 @@ const RegistrationPage = memo(() => {
                     value={formData.relationship}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   >
                     <option value="">Select Relationship</option>
                     <option value="Mother">Mother</option>
@@ -340,7 +340,7 @@ const RegistrationPage = memo(() => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -353,7 +353,7 @@ const RegistrationPage = memo(() => {
                     onChange={handleChange}
                     required
                     placeholder="04XX XXX XXX"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -365,7 +365,7 @@ const RegistrationPage = memo(() => {
                     value={formData.alternatePhone}
                     onChange={handleChange}
                     placeholder="04XX XXX XXX"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -376,7 +376,7 @@ const RegistrationPage = memo(() => {
           <Card className="mb-6">
             <CardContent className="p-6">
               <div className="flex items-center mb-6">
-                <MapPin className="w-6 h-6 text-orange-600 mr-2" />
+                <MapPin className="w-6 h-6 text-amber-600 mr-2" />
                 <h2 className="text-2xl font-bold text-gray-900">Address</h2>
               </div>
 
@@ -389,7 +389,7 @@ const RegistrationPage = memo(() => {
                     value={formData.streetAddress}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -401,7 +401,7 @@ const RegistrationPage = memo(() => {
                     value={formData.suburb}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -415,7 +415,7 @@ const RegistrationPage = memo(() => {
                     required
                     pattern="[0-9]{4}"
                     placeholder="3977"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -426,7 +426,7 @@ const RegistrationPage = memo(() => {
                     value={formData.state}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   >
                     <option value="VIC">Victoria</option>
                     <option value="NSW">New South Wales</option>
@@ -446,7 +446,7 @@ const RegistrationPage = memo(() => {
           <Card className="mb-6">
             <CardContent className="p-6">
               <div className="flex items-center mb-6">
-                <Phone className="w-6 h-6 text-orange-600 mr-2" />
+                <Phone className="w-6 h-6 text-amber-600 mr-2" />
                 <h2 className="text-2xl font-bold text-gray-900">Emergency Contact</h2>
               </div>
 
@@ -459,7 +459,7 @@ const RegistrationPage = memo(() => {
                     value={formData.emergencyName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -472,7 +472,7 @@ const RegistrationPage = memo(() => {
                     onChange={handleChange}
                     required
                     placeholder="e.g., Father, Mother, Uncle"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
@@ -485,7 +485,7 @@ const RegistrationPage = memo(() => {
                     onChange={handleChange}
                     required
                     placeholder="04XX XXX XXX"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -502,10 +502,10 @@ const RegistrationPage = memo(() => {
                   checked={formData.terms}
                   onChange={handleChange}
                   required
-                  className="mt-1 mr-3 w-5 h-5 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                  className="mt-1 mr-3 w-5 h-5 text-amber-600 focus:ring-amber-500 border-gray-300 rounded"
                 />
                 <label className="text-sm text-gray-700">
-                  I agree to the <button type="button" className="text-orange-600 hover:underline">Terms and Conditions</button> and acknowledge that all information provided is accurate. I understand that registration fees are non-refundable and that players must commit to the full season. *
+                  I agree to the <button type="button" className="text-amber-600 hover:underline">Terms and Conditions</button> and acknowledge that all information provided is accurate. I understand that registration fees are non-refundable and that players must commit to the full season. *
                 </label>
               </div>
             </CardContent>
@@ -515,7 +515,7 @@ const RegistrationPage = memo(() => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               type="submit"
-              className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-12 py-6 text-lg font-bold"
+              className="bg-gradient-to-r from-amber-500 to-green-600 text-white px-12 py-6 text-lg font-bold"
             >
               Submit Registration
             </Button>

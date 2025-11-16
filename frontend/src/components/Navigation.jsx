@@ -34,12 +34,12 @@ const Navigation = memo(({ variant = 'default' }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <button onClick={scrollToTeams} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Teams</button>
-            <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</button>
-            <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</button>
-            <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</button>
-            <button onClick={() => navigate('/contact')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</button>
-            <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
+            <button onClick={scrollToTeams} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">Teams</button>
+            <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">Training</button>
+            <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">News</button>
+            <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">About</button>
+            <button onClick={() => navigate('/contact')} className="text-sm text-gray-700 hover:text-amber-500 px-2 py-1">Contact</button>
+            <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-amber-500 to-green-600 text-white px-4 py-1 text-sm rounded-full">
               Join
             </Button>
           </div>
@@ -63,12 +63,12 @@ const Navigation = memo(({ variant = 'default' }) => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-3 py-2 space-y-1">
-            <button onClick={() => { scrollToTeams(); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Teams</button>
-            <button onClick={() => { navigate('/training'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Training</button>
-            <button onClick={() => { navigate('/news'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">News</button>
-            <button onClick={() => { navigate('/about'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
-            <button onClick={() => { navigate('/contact'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Contact</button>
-            <Button onClick={() => { navigate('/registration'); setIsMenuOpen(false); }} className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
+            <button onClick={() => { scrollToTeams(); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">Teams</button>
+            <button onClick={() => { navigate('/training'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">Training</button>
+            <button onClick={() => { navigate('/news'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">News</button>
+            <button onClick={() => { navigate('/about'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">About</button>
+            <button onClick={() => { navigate('/contact'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-amber-500 w-full text-left">Contact</button>
+            <Button onClick={() => { navigate('/registration'); setIsMenuOpen(false); }} className="w-full mt-1 bg-gradient-to-r from-amber-500 to-green-600 text-white text-sm rounded-full">
               Join Now
             </Button>
           </div>

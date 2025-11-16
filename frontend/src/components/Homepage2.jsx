@@ -171,9 +171,9 @@ const Homepage2 = memo(() => {
                 </div>
                 <CardContent className="p-3">
                   <h3 className="text-sm font-bold text-gray-900 mb-0.5">{leader.name}</h3>
-                  <p className="text-xs text-orange-600 font-semibold mb-2">{leader.position}</p>
+                  <p className="text-xs text-amber-600 font-semibold mb-2">{leader.position}</p>
                   <p className="text-xs text-gray-600 mb-2">{leader.bio}</p>
-                  <Button size="sm" variant="outline" className="w-full border-orange-200 text-orange-600 hover:bg-orange-50 text-xs py-1">
+                  <Button size="sm" variant="outline" className="w-full border-amber-200 text-amber-600 hover:bg-amber-50 text-xs py-1">
                     <Mail className="w-3 h-3 mr-1" />
                     Contact
                   </Button>
@@ -201,8 +201,8 @@ const Homepage2 = memo(() => {
                   />
                   <div className="absolute top-2 left-2">
                     <Badge className={`${
-                      article.category === 'Training' ? 'bg-orange-500' :
-                      article.category === 'Games' ? 'bg-blue-500' : 'bg-green-500'
+                      article.category === 'Training' ? 'bg-amber-500' :
+                      article.category === 'Games' ? 'bg-green-500' : 'bg-green-500'
                     } text-white text-xs`}>
                       {article.category}
                     </Badge>
@@ -216,7 +216,7 @@ const Homepage2 = memo(() => {
                     onClick={() => navigate(`/news/${article.slug}`)}
                     size="sm"
                     variant="outline"
-                    className="w-full border-orange-200 text-orange-600 hover:bg-orange-50 text-xs py-1"
+                    className="w-full border-amber-200 text-amber-600 hover:bg-amber-50 text-xs py-1"
                   >
                     Read More
                   </Button>
@@ -227,7 +227,7 @@ const Homepage2 = memo(() => {
           <div className="text-center mt-4">
             <Button
               onClick={() => navigate('/news')}
-              className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-6 py-2 text-sm rounded-full"
+              className="bg-gradient-to-r from-amber-500 to-green-600 text-white px-6 py-2 text-sm rounded-full"
             >
               View All News
             </Button>
@@ -254,13 +254,13 @@ const Homepage2 = memo(() => {
                 Developing young athletes through basketball since 2010.
               </p>
               <div className="flex space-x-2">
-                <Button size="sm" variant="ghost" className="p-1 hover:bg-orange-600">
+                <Button size="sm" variant="ghost" className="p-1 hover:bg-amber-600">
                   <Facebook className="w-4 h-4" />
                 </Button>
-                <Button size="sm" variant="ghost" className="p-1 hover:bg-orange-600">
+                <Button size="sm" variant="ghost" className="p-1 hover:bg-amber-600">
                   <Instagram className="w-4 h-4" />
                 </Button>
-                <Button size="sm" variant="ghost" className="p-1 hover:bg-orange-600">
+                <Button size="sm" variant="ghost" className="p-1 hover:bg-amber-600">
                   <Twitter className="w-4 h-4" />
                 </Button>
               </div>
@@ -269,10 +269,10 @@ const Homepage2 = memo(() => {
             <div>
               <h3 className="text-sm font-semibold mb-2">Quick Links</h3>
               <ul className="space-y-1 text-xs text-gray-400">
-                <li><button onClick={scrollToTeams} className="hover:text-orange-400 text-left">Our Teams</button></li>
-                <li><button onClick={() => navigate('/training')} className="hover:text-orange-400 text-left">Training</button></li>
-                <li><button onClick={() => navigate('/news')} className="hover:text-orange-400 text-left">News</button></li>
-                <li><button onClick={() => navigate('/about')} className="hover:text-orange-400 text-left">About</button></li>
+                <li><button onClick={scrollToTeams} className="hover:text-amber-400 text-left">Our Teams</button></li>
+                <li><button onClick={() => navigate('/training')} className="hover:text-amber-400 text-left">Training</button></li>
+                <li><button onClick={() => navigate('/news')} className="hover:text-amber-400 text-left">News</button></li>
+                <li><button onClick={() => navigate('/about')} className="hover:text-amber-400 text-left">About</button></li>
               </ul>
             </div>
 
@@ -292,9 +292,9 @@ const Homepage2 = memo(() => {
                 <input
                   type="email"
                   placeholder="Enter email"
-                  className="flex-1 px-2 py-1 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-orange-500 text-xs"
+                  className="flex-1 px-2 py-1 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-amber-500 text-xs"
                 />
-                <Button className="bg-gradient-to-r from-orange-500 to-blue-600 px-3 py-1 rounded-r-lg text-xs">
+                <Button className="bg-gradient-to-r from-amber-500 to-green-600 px-3 py-1 rounded-r-lg text-xs">
                   Subscribe
                 </Button>
               </div>

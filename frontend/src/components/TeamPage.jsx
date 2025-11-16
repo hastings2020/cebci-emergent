@@ -32,7 +32,7 @@ const TeamPage = memo(() => {
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Team Not Found</h1>
           <p className="text-gray-600 mb-6">The team "{teamName}" could not be found.</p>
-          <Button onClick={() => navigate('/')} className="bg-gradient-to-r from-orange-500 to-blue-600">
+          <Button onClick={() => navigate('/')} className="bg-gradient-to-r from-amber-500 to-green-600">
             Back to Home
           </Button>
         </div>
@@ -52,12 +52,12 @@ const TeamPage = memo(() => {
       <Navigation />
 
       {/* Team Header */}
-      <div className="bg-gradient-to-r from-orange-500 to-blue-600 text-white py-8">
+      <div className="bg-gradient-to-r from-amber-500 to-green-600 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold mb-2">{teamName}</h1>
-              <Badge className="bg-white text-orange-600 text-lg px-4 py-1">
+              <Badge className="bg-white text-amber-600 text-lg px-4 py-1">
                 {team.age} {team.gender}
               </Badge>
               <p className="text-white/90 mt-2">{team.grade}</p>
@@ -73,24 +73,24 @@ const TeamPage = memo(() => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Schedule</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Training Schedule */}
-            <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 shadow-lg">
+            <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200 shadow-lg">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mr-4">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Training</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start">
-                    <Calendar className="w-5 h-5 text-orange-600 mr-3 mt-0.5" />
+                    <Calendar className="w-5 h-5 text-amber-600 mr-3 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-600 font-medium">Day & Time</p>
                       <p className="text-gray-900 font-semibold">{team.training.day}s, {team.training.time}</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-orange-600 mr-3 mt-0.5" />
+                    <MapPin className="w-5 h-5 text-amber-600 mr-3 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-600 font-medium">Location</p>
                       <p className="text-gray-900 font-semibold">{team.training.location}</p>
@@ -102,24 +102,24 @@ const TeamPage = memo(() => {
             </Card>
 
             {/* Match Schedule */}
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 shadow-lg">
+            <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200 shadow-lg">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Match Day</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start">
-                    <Calendar className="w-5 h-5 text-blue-600 mr-3 mt-0.5" />
+                    <Calendar className="w-5 h-5 text-green-600 mr-3 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-600 font-medium">Day & Time</p>
                       <p className="text-gray-900 font-semibold">{team.matchDay.day}s, {team.matchDay.time}</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-blue-600 mr-3 mt-0.5" />
+                    <MapPin className="w-5 h-5 text-green-600 mr-3 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-600 font-medium">Venue</p>
                       <p className="text-gray-900 font-semibold">{team.matchDay.venue}</p>
@@ -142,10 +142,10 @@ const TeamPage = memo(() => {
                   <img
                     src={team.coach.photo}
                     alt={team.coach.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-orange-500"
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-amber-500"
                   />
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{team.coach.name}</h3>
-                  <p className="text-sm text-orange-600 font-semibold mb-3">Head Coach</p>
+                  <p className="text-sm text-amber-600 font-semibold mb-3">Head Coach</p>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-4 h-4" />
@@ -167,10 +167,10 @@ const TeamPage = memo(() => {
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face&q=80"
                     alt={team.assistant}
-                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500"
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-green-500"
                   />
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{team.assistant}</h3>
-                  <p className="text-sm text-blue-600 font-semibold mb-3">Assistant Coach</p>
+                  <p className="text-sm text-green-600 font-semibold mb-3">Assistant Coach</p>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-4 h-4" />
@@ -219,7 +219,7 @@ const TeamPage = memo(() => {
                         className="w-full aspect-square rounded-lg object-cover group-hover:scale-105 transition-transform"
                         loading="lazy"
                       />
-                      <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                      <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-r from-amber-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                         {player.number}
                       </div>
                     </div>

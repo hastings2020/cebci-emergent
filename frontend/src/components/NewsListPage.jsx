@@ -46,10 +46,10 @@ const NewsListPage = memo(() => {
       <Navigation />
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-orange-500 to-blue-600 text-white py-12">
+      <div className="bg-gradient-to-r from-amber-500 to-green-600 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Latest News & Updates</h1>
-          <p className="text-xl text-orange-100">
+          <p className="text-xl text-amber-100">
             Stay informed with the latest happenings from Cranbourne Eagles Basketball Club
           </p>
         </div>
@@ -67,7 +67,7 @@ const NewsListPage = memo(() => {
                 variant={selectedCategory === category ? 'default' : 'outline'}
                 className={`${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white'
+                    ? 'bg-gradient-to-r from-amber-500 to-green-600 text-white'
                     : 'border-gray-300 text-gray-700 hover:bg-gray-100'
                 }`}
               >
@@ -94,8 +94,8 @@ const NewsListPage = memo(() => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute top-3 left-3">
                   <Badge className={`${
-                    article.category === 'Training' ? 'bg-orange-500' :
-                    article.category === 'Games' ? 'bg-blue-500' : 'bg-green-500'
+                    article.category === 'Training' ? 'bg-amber-500' :
+                    article.category === 'Games' ? 'bg-green-500' : 'bg-green-500'
                   } text-white`}>
                     {article.category}
                   </Badge>
@@ -112,7 +112,7 @@ const NewsListPage = memo(() => {
                     <span>{article.readTime}</span>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">
                   {article.title}
                 </h3>
                 <p className="text-sm text-gray-600 mb-3 line-clamp-3">
@@ -126,7 +126,7 @@ const NewsListPage = memo(() => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="border-orange-200 text-orange-600 hover:bg-orange-50"
+                    className="border-amber-200 text-amber-600 hover:bg-amber-50"
                   >
                     Read More
                   </Button>
@@ -167,7 +167,7 @@ const NewsListPage = memo(() => {
                       size="sm"
                       className={`w-10 ${
                         currentPage === pageNumber
-                          ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white'
+                          ? 'bg-gradient-to-r from-amber-500 to-green-600 text-white'
                           : 'border-gray-300 text-gray-700'
                       }`}
                     >

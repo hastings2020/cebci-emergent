@@ -30,13 +30,13 @@ const AboutPage = memo(() => {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-orange-600 via-orange-500 to-blue-600 text-white py-20">
+      <div className="relative bg-gradient-to-r from-amber-600 via-amber-500 to-green-600 text-white py-20">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             About Cranbourne Eagles
           </h1>
-          <p className="text-xl md:text-2xl text-orange-100 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-amber-100 max-w-3xl mx-auto">
             Fostering camaraderie, developing skills, and building character since 2023
           </p>
         </div>
@@ -51,7 +51,7 @@ const AboutPage = memo(() => {
               return (
                 <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-all">
                   <CardContent className="p-6">
-                    <IconComponent className="w-10 h-10 mx-auto mb-3 text-orange-600" />
+                    <IconComponent className="w-10 h-10 mx-auto mb-3 text-amber-600" />
                     <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                       {stat.number}
                     </div>
@@ -76,7 +76,7 @@ const AboutPage = memo(() => {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p className="text-lg">
-                  <strong className="text-orange-600">Cranbourne Eagles Basketball Club Incorporated Association</strong> offers and fosters a camaraderie for its members, families, and teams of players, while catering to individual self-development for future generations of basketball players, ensuring and encouraging inclusivity for all demographics.
+                  <strong className="text-amber-600">Cranbourne Eagles Basketball Club Incorporated Association</strong> offers and fosters a camaraderie for its members, families, and teams of players, while catering to individual self-development for future generations of basketball players, ensuring and encouraging inclusivity for all demographics.
                 </p>
                 <p>
                   Established in the summer of <strong>2023</strong> by dedicated and passionate parents who are insistent on the cultivation of appropriate basketball techniques not offered by other domestic clubs.
@@ -92,7 +92,7 @@ const AboutPage = memo(() => {
                 alt="Basketball Training"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-blue-600 text-white p-6 rounded-xl shadow-lg">
+              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-amber-500 to-green-600 text-white p-6 rounded-xl shadow-lg">
                 <div className="text-4xl font-bold">2023</div>
                 <div className="text-sm">Established</div>
               </div>
@@ -106,10 +106,10 @@ const AboutPage = memo(() => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission Card */}
-            <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mr-4">
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
@@ -121,10 +121,10 @@ const AboutPage = memo(() => {
             </Card>
 
             {/* Vision Card */}
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                     <Trophy className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
@@ -154,7 +154,7 @@ const AboutPage = memo(() => {
                 <Card key={index} className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -179,7 +179,7 @@ const AboutPage = memo(() => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Expert Coaches</h3>
@@ -191,7 +191,7 @@ const AboutPage = memo(() => {
 
             <Card className="text-center shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Inclusive Environment</h3>
@@ -217,19 +217,19 @@ const AboutPage = memo(() => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-blue-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-amber-600 to-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Join the Eagles Family?
           </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">
             Become part of a community that's dedicated to developing young athletes and building character
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={() => navigate('/')}
               size="lg"
-              className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-6 text-lg rounded-full font-bold"
+              className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-6 text-lg rounded-full font-bold"
             >
               Register Now
             </Button>
@@ -237,7 +237,7 @@ const AboutPage = memo(() => {
               onClick={() => navigate('/#contact')}
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-lg rounded-full font-bold"
+              className="border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-6 text-lg rounded-full font-bold"
             >
               Contact Us
             </Button>

@@ -38,10 +38,10 @@ const TrainingPage = memo(() => {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-orange-600 to-blue-600 text-white py-16">
+      <div className="bg-gradient-to-r from-amber-600 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Training Schedule</h1>
-          <p className="text-xl text-orange-100">
+          <p className="text-xl text-amber-100">
             Find your team's training times, locations, and match days
           </p>
         </div>
@@ -61,7 +61,7 @@ const TrainingPage = memo(() => {
                   onClick={() => setSelectedDay('All')}
                   variant={selectedDay === 'All' ? 'default' : 'outline'}
                   size="sm"
-                  className={selectedDay === 'All' ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white' : ''}
+                  className={selectedDay === 'All' ? 'bg-gradient-to-r from-amber-500 to-green-600 text-white' : ''}
                 >
                   All Days
                 </Button>
@@ -71,7 +71,7 @@ const TrainingPage = memo(() => {
                     onClick={() => setSelectedDay(day)}
                     variant={selectedDay === day ? 'default' : 'outline'}
                     size="sm"
-                    className={selectedDay === day ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white' : ''}
+                    className={selectedDay === day ? 'bg-gradient-to-r from-amber-500 to-green-600 text-white' : ''}
                   >
                     {day}
                   </Button>
@@ -89,7 +89,7 @@ const TrainingPage = memo(() => {
                     onClick={() => setSelectedAge(age)}
                     variant={selectedAge === age ? 'default' : 'outline'}
                     size="sm"
-                    className={selectedAge === age ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white' : ''}
+                    className={selectedAge === age ? 'bg-gradient-to-r from-amber-500 to-green-600 text-white' : ''}
                   >
                     {age}
                   </Button>
@@ -102,7 +102,7 @@ const TrainingPage = memo(() => {
         {/* Results Count */}
         <div className="mb-6">
           <p className="text-gray-600">
-            Showing <span className="font-bold text-orange-600">{filteredTeams.length}</span> team{filteredTeams.length !== 1 ? 's' : ''}
+            Showing <span className="font-bold text-amber-600">{filteredTeams.length}</span> team{filteredTeams.length !== 1 ? 's' : ''}
           </p>
         </div>
 
@@ -113,9 +113,9 @@ const TrainingPage = memo(() => {
         }).map(day => (
           <div key={day} className="mb-8">
             <div className="flex items-center mb-4">
-              <Calendar className="w-6 h-6 text-orange-600 mr-2" />
+              <Calendar className="w-6 h-6 text-amber-600 mr-2" />
               <h2 className="text-2xl font-bold text-gray-900">{day}</h2>
-              <Badge className="ml-3 bg-orange-100 text-orange-800">
+              <Badge className="ml-3 bg-amber-100 text-orange-800">
                 {groupedByDay[day].length} team{groupedByDay[day].length !== 1 ? 's' : ''}
               </Badge>
             </div>
@@ -128,7 +128,7 @@ const TrainingPage = memo(() => {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h3 className="text-lg font-bold text-gray-900">{team.name}</h3>
-                        <Badge className="mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-xs">
+                        <Badge className="mt-1 bg-gradient-to-r from-amber-500 to-green-600 text-white text-xs">
                           {team.age} {team.gender}
                         </Badge>
                       </div>
@@ -137,7 +137,7 @@ const TrainingPage = memo(() => {
                     {/* Training Time */}
                     <div className="space-y-3">
                       <div className="flex items-start">
-                        <Clock className="w-4 h-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <Clock className="w-4 h-4 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
                         <div>
                           <p className="text-sm font-semibold text-gray-900">{team.training.time}</p>
                           <p className="text-xs text-gray-600">Training Time</p>
@@ -145,7 +145,7 @@ const TrainingPage = memo(() => {
                       </div>
 
                       <div className="flex items-start">
-                        <MapPin className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <MapPin className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                         <div>
                           <p className="text-sm font-semibold text-gray-900">{team.training.location}</p>
                           <p className="text-xs text-gray-600">{team.training.address}</p>
@@ -175,7 +175,7 @@ const TrainingPage = memo(() => {
                         e.stopPropagation();
                         navigate(`/team/${team.name}`);
                       }}
-                      className="w-full mt-4 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm"
+                      className="w-full mt-4 bg-gradient-to-r from-amber-500 to-green-600 text-white text-sm"
                     >
                       View Team Details
                     </Button>
@@ -197,7 +197,7 @@ const TrainingPage = memo(() => {
                 setSelectedDay('All');
                 setSelectedAge('All');
               }}
-              className="bg-gradient-to-r from-orange-500 to-blue-600 text-white"
+              className="bg-gradient-to-r from-amber-500 to-green-600 text-white"
             >
               Clear Filters
             </Button>
