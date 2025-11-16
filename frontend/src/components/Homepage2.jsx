@@ -1,10 +1,13 @@
 import React, { memo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Trophy, Target, Users, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+import { newsArticles } from '../data/newsData';
 
 const Homepage2 = memo(() => {
+  const navigate = useNavigate();
   const [activeCoachesTab, setActiveCoachesTab] = useState('U8');
   const [activeTeamTab, setActiveTeamTab] = useState({
     U8: 'Kareem',
@@ -113,29 +116,22 @@ const Homepage2 = memo(() => {
     }
   };
 
-  const news = [
-    {
-      title: 'Summer Training Camp Registration Open',
-      excerpt: 'Join us for intensive skills development this summer...',
-      image: 'https://images.unsplash.com/photo-1577416412292-747c6607f055?w=300&h=150&fit=crop&q=80',
-      category: 'Training',
-      date: '2 days ago'
-    },
-    {
-      title: 'U16 Team Wins Regional Championship',
-      excerpt: 'Our Elite Squad dominated the regional finals...',
-      image: 'https://images.unsplash.com/photo-1520399636535-24741e71b160?w=300&h=150&fit=crop&q=80',
-      category: 'Games',
-      date: '1 week ago'
-    },
-    {
-      title: 'New Equipment Donation from Local Business',
-      excerpt: 'Thanks to SportsPro for donating new basketballs...',
-      image: 'https://images.unsplash.com/photo-1600534220378-df36338afc40?w=300&h=150&fit=crop&q=80',
-      category: 'Events',
-      date: '2 weeks ago'
+  // Format date for display
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 7) {
+      return `${diffDays} day${diffDays !== 1 ? 's' : ''} ago`;
+    } else if (diffDays < 30) {
+      const weeks = Math.floor(diffDays / 7);
+      return `${weeks} week${weeks !== 1 ? 's' : ''} ago`;
+    } else {
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     }
-  ];
+  };
 
   const handleTeamTabChange = (ageGroup, teamName) => {
     setActiveTeamTab(prev => ({
@@ -276,7 +272,7 @@ const Homepage2 = memo(() => {
         <div className="max-w-7xl mx-auto px-3 sm:px-4">
           <h2 className="text-xl font-bold text-center text-gray-900 mb-4">Latest News & Updates</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {news.map((article, index) => (
+            {newsArticles.slice(0, 3).map((article, index) => (
               <Card key={index} className="group overflow-hidden bg-white shadow hover:shadow-md transition-all">
                 <div className="relative h-28 overflow-hidden">
                   <img
@@ -295,10 +291,15 @@ const Homepage2 = memo(() => {
                   </div>
                 </div>
                 <CardContent className="p-3">
-                  <p className="text-xs text-gray-500 mb-1">{article.date}</p>
+                  <p className="text-xs text-gray-500 mb-1">{formatDate(article.date)}</p>
                   <h3 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2">{article.title}</h3>
                   <p className="text-xs text-gray-600 mb-2 line-clamp-2">{article.excerpt}</p>
-                  <Button size="sm" variant="outline" className="w-full border-orange-200 text-orange-600 hover:bg-orange-50 text-xs py-1">
+                  <Button
+                    onClick={() => navigate(`/news/${article.slug}`)}
+                    size="sm"
+                    variant="outline"
+                    className="w-full border-orange-200 text-orange-600 hover:bg-orange-50 text-xs py-1"
+                  >
                     Read More
                   </Button>
                 </CardContent>
@@ -306,7 +307,10 @@ const Homepage2 = memo(() => {
             ))}
           </div>
           <div className="text-center mt-4">
-            <Button className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-6 py-2 text-sm rounded-full">
+            <Button
+              onClick={() => navigate('/news')}
+              className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-6 py-2 text-sm rounded-full"
+            >
               View All News
             </Button>
           </div>
