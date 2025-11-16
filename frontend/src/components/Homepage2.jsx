@@ -184,96 +184,6 @@ const Homepage2 = memo(() => {
         </div>
       </section>
 
-      {/* Coaches Corner - Compact */}
-      <section id="training" className="py-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4">
-          <h2 className="text-xl font-bold text-center text-gray-900 mb-2">Coaches Corner</h2>
-          <p className="text-center text-xs text-gray-600 mb-4 max-w-2xl mx-auto">
-            Our experienced coaching staff is dedicated to developing each player's potential across all age groups.
-          </p>
-
-          {/* Age Group Tabs */}
-          <div className="flex overflow-x-auto space-x-1 mb-4 border-b border-gray-300 justify-center">
-            {['U8', 'U10', 'U12', 'U14', 'U16', 'U18'].map((age) => (
-              <button
-                key={age}
-                onClick={() => setActiveCoachesTab(age)}
-                className={`px-4 py-2 text-sm font-semibold transition-colors whitespace-nowrap ${
-                  activeCoachesTab === age
-                    ? 'text-orange-600 border-b-2 border-orange-600'
-                    : 'text-gray-600 hover:text-orange-500'
-                }`}
-              >
-                {age}
-              </button>
-            ))}
-          </div>
-
-          {/* Teams Tabs within Age Group */}
-          <div className="mb-3">
-            <div className="flex overflow-x-auto space-x-1 mb-3 bg-white p-2 rounded-lg">
-              {coachesByAge[activeCoachesTab].teams.map((team) => (
-                <button
-                  key={team.name}
-                  onClick={() => handleTeamTabChange(activeCoachesTab, team.name)}
-                  className={`px-3 py-1.5 text-xs font-medium rounded transition-colors whitespace-nowrap ${
-                    activeTeamTab[activeCoachesTab] === team.name
-                      ? 'bg-gradient-to-r from-orange-500 to-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {team.name} ({team.gender})
-                </button>
-              ))}
-            </div>
-
-            {/* Team Details */}
-            {coachesByAge[activeCoachesTab].teams
-              .filter(team => team.name === activeTeamTab[activeCoachesTab])
-              .map((team) => (
-                <Card key={team.name} className="bg-white shadow">
-                  <CardContent className="p-4">
-                    <div className="mb-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-gray-900">{team.name}</h3>
-                        <Badge className="bg-gradient-to-r from-orange-500 to-blue-600 text-white">
-                          {activeCoachesTab} {team.gender}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-gray-600">{team.grade}</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-3">
-                      <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-3 rounded-lg">
-                        <h4 className="text-xs font-semibold text-orange-900 mb-2">Head Coach</h4>
-                        <p className="text-sm font-bold text-gray-900">{team.coach}</p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg">
-                        <h4 className="text-xs font-semibold text-blue-900 mb-2">Assistant Coach</h4>
-                        <p className="text-sm font-bold text-gray-900">{team.assistant}</p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-3 rounded-lg">
-                        <h4 className="text-xs font-semibold text-gray-900 mb-2">Team Manager</h4>
-                        <p className="text-sm font-bold text-gray-900">{team.manager}</p>
-                      </div>
-                    </div>
-
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs">
-                        Contact Team
-                      </Button>
-                      <Button size="sm" variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 text-xs">
-                        View Schedule
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-          </div>
-        </div>
-      </section>
 
       {/* News & Updates - Compact */}
       <section id="news" className="py-6 bg-white">
@@ -325,42 +235,6 @@ const Homepage2 = memo(() => {
         </div>
       </section>
 
-      {/* Call-to-Action - Compact */}
-      <section className="py-8 bg-gradient-to-r from-orange-500 via-orange-600 to-blue-600">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-3">Ready to Join Our Team?</h2>
-          <p className="text-sm text-orange-100 mb-4 max-w-2xl mx-auto">
-            Start your basketball journey with us. Choose your age group and begin developing skills!
-          </p>
-
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-4">
-            {['U8', 'U10', 'U12', 'U14', 'U16', 'U18'].map((age) => (
-              <Button key={age} variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-orange-600 py-2 text-sm">
-                {age}
-              </Button>
-            ))}
-          </div>
-
-          <div className="space-y-2 mb-4 text-sm">
-            <div className="flex items-center justify-center text-white">
-              <Target className="w-4 h-4 mr-2" />
-              <span>Professional coaching</span>
-            </div>
-            <div className="flex items-center justify-center text-white">
-              <Users className="w-4 h-4 mr-2" />
-              <span>Build teamwork skills</span>
-            </div>
-            <div className="flex items-center justify-center text-white">
-              <Trophy className="w-4 h-4 mr-2" />
-              <span>Competitive games</span>
-            </div>
-          </div>
-
-          <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-sm rounded-full font-bold shadow-lg">
-            Register Now
-          </Button>
-        </div>
-      </section>
 
       {/* Footer - Compact */}
       <footer id="contact" className="bg-gray-900 text-white py-6">
