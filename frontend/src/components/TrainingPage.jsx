@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, MapPin, Calendar, Users, Trophy } from 'lucide-react';
+import Navigation from './Navigation';
+import { Clock, MapPin, Calendar, Users, Trophy } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -33,29 +34,8 @@ const TrainingPage = memo(() => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation Bar */}
-      <nav className="bg-white shadow sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-3">
-              <img
-                src="https://cebci.au/wp-content/uploads/2022/08/CE-Logo-White-Background.png"
-                alt="Logo"
-                className="w-10 h-10 rounded-full object-cover"
-              />
-              <span className="text-lg font-bold text-gray-900">Cranbourne Eagles</span>
-            </div>
-            <Button
-              onClick={() => navigate('/')}
-              variant="outline"
-              className="flex items-center space-x-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to Home</span>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}
+      <Navigation />
 
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-orange-600 to-blue-600 text-white py-16">
