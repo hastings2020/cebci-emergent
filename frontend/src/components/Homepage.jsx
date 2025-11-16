@@ -12,11 +12,11 @@ const Homepage = memo(() => {
   const [activeScorersTab, setActiveScorersTab] = useState('U8');
   const [activeTeamsTab, setActiveTeamsTab] = useState('U8');
 
-  // Scroll to contact section
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Scroll to teams section
+  const scrollToTeams = () => {
+    const teamsSection = document.getElementById('teams');
+    if (teamsSection) {
+      teamsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsMenuOpen(false); // Close mobile menu if open
     }
   };
@@ -210,11 +210,11 @@ const Homepage = memo(() => {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <a href="#teams" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Teams</a>
+              <button onClick={scrollToTeams} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Teams</button>
               <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</button>
               <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</button>
               <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</button>
-              <button onClick={scrollToContact} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</button>
+              <button onClick={() => navigate('/contact')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</button>
               <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
                 Join
               </Button>
@@ -237,12 +237,12 @@ const Homepage = memo(() => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-3 py-2 space-y-1">
-              <a href="#teams" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Teams</a>
-              <button onClick={() => navigate('/training')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Training</button>
-              <button onClick={() => navigate('/news')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">News</button>
-              <button onClick={() => navigate('/about')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
-              <button onClick={scrollToContact} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Contact</button>
-              <Button onClick={() => navigate('/registration')} className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
+              <button onClick={scrollToTeams} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Teams</button>
+              <button onClick={() => { navigate('/training'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Training</button>
+              <button onClick={() => { navigate('/news'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">News</button>
+              <button onClick={() => { navigate('/about'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
+              <button onClick={() => { navigate('/contact'); setIsMenuOpen(false); }} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Contact</button>
+              <Button onClick={() => { navigate('/registration'); setIsMenuOpen(false); }} className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
                 Join Now
               </Button>
             </div>
