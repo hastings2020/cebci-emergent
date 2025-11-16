@@ -18,6 +18,14 @@ const Homepage2 = memo(() => {
     U18: 'James'
   });
 
+  // Scroll to teams section
+  const scrollToTeams = () => {
+    const teamsSection = document.getElementById('teams');
+    if (teamsSection) {
+      teamsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const leadership = [
     {
       name: 'David Martinez',
@@ -387,9 +395,9 @@ const Homepage2 = memo(() => {
             <div>
               <h3 className="text-sm font-semibold mb-2">Quick Links</h3>
               <ul className="space-y-1 text-xs text-gray-400">
-                <li><a href="#teams" className="hover:text-orange-400">Our Teams</a></li>
-                <li><a href="#training" className="hover:text-orange-400">Training</a></li>
-                <li><a href="#news" className="hover:text-orange-400">News</a></li>
+                <li><button onClick={scrollToTeams} className="hover:text-orange-400 text-left">Our Teams</button></li>
+                <li><button onClick={() => navigate('/training')} className="hover:text-orange-400 text-left">Training</button></li>
+                <li><button onClick={() => navigate('/news')} className="hover:text-orange-400 text-left">News</button></li>
                 <li><button onClick={() => navigate('/about')} className="hover:text-orange-400 text-left">About</button></li>
               </ul>
             </div>

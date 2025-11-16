@@ -12,6 +12,15 @@ const Homepage = memo(() => {
   const [activeScorersTab, setActiveScorersTab] = useState('U8');
   const [activeTeamsTab, setActiveTeamsTab] = useState('U8');
 
+  // Scroll to contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMenuOpen(false); // Close mobile menu if open
+    }
+  };
+
   const heroImages = [
     {
       url: 'https://cebci.au/wp-content/uploads/2023/02/excom-scaled.jpeg',
@@ -205,7 +214,7 @@ const Homepage = memo(() => {
               <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</button>
               <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</button>
               <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</button>
-              <a href="#contact" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</a>
+              <button onClick={scrollToContact} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</button>
               <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
                 Join
               </Button>
@@ -232,7 +241,7 @@ const Homepage = memo(() => {
               <button onClick={() => navigate('/training')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Training</button>
               <button onClick={() => navigate('/news')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">News</button>
               <button onClick={() => navigate('/about')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
-              <a href="#contact" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Contact</a>
+              <button onClick={scrollToContact} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Contact</button>
               <Button onClick={() => navigate('/registration')} className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
                 Join Now
               </Button>
