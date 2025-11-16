@@ -390,7 +390,7 @@ const Homepage2 = memo(() => {
                 <li><a href="#teams" className="hover:text-orange-400">Our Teams</a></li>
                 <li><a href="#training" className="hover:text-orange-400">Training</a></li>
                 <li><a href="#news" className="hover:text-orange-400">News</a></li>
-                <li><a href="#about" className="hover:text-orange-400">About</a></li>
+                <li><button onClick={() => navigate('/about')} className="hover:text-orange-400 text-left">About</button></li>
               </ul>
             </div>
 

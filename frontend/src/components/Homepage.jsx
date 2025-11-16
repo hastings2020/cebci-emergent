@@ -204,7 +204,7 @@ const Homepage = memo(() => {
               <a href="#teams" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Teams</a>
               <a href="#training" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</a>
               <a href="#news" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</a>
-              <a href="#about" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</a>
+              <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</button>
               <a href="#contact" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</a>
               <Button className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
                 Join
@@ -231,7 +231,7 @@ const Homepage = memo(() => {
               <a href="#teams" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Teams</a>
               <a href="#training" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Training</a>
               <a href="#news" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">News</a>
-              <a href="#about" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">About</a>
+              <button onClick={() => navigate('/about')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
               <a href="#contact" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Contact</a>
               <Button className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
                 Join Now

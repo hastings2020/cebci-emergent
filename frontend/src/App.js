@@ -6,6 +6,7 @@ import Homepage2 from "./components/Homepage2";
 import TeamPage from "./components/TeamPage";
 import NewsListPage from "./components/NewsListPage";
 import NewsDetailPage from "./components/NewsDetailPage";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/team/:teamName" element={<TeamPage />} />
           <Route path="/news" element={<NewsListPage />} />
           <Route path="/news/:slug" element={<NewsDetailPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </HashRouter>
     </div>
