@@ -7,6 +7,8 @@ import TeamPage from "./components/TeamPage";
 import NewsListPage from "./components/NewsListPage";
 import NewsDetailPage from "./components/NewsDetailPage";
 import AboutPage from "./components/AboutPage";
+import TrainingPage from "./components/TrainingPage";
+import RegistrationPage from "./components/RegistrationPage";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/news" element={<NewsListPage />} />
           <Route path="/news/:slug" element={<NewsDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/training" element={<TrainingPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
         </Routes>
       </HashRouter>
     </div>

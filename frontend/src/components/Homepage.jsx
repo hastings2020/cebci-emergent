@@ -202,11 +202,11 @@ const Homepage = memo(() => {
 
             <div className="hidden md:flex items-center space-x-4">
               <a href="#teams" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Teams</a>
-              <a href="#training" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</a>
-              <a href="#news" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</a>
+              <button onClick={() => navigate('/training')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Training</button>
+              <button onClick={() => navigate('/news')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">News</button>
               <button onClick={() => navigate('/about')} className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">About</button>
               <a href="#contact" className="text-sm text-gray-700 hover:text-orange-500 px-2 py-1">Contact</a>
-              <Button className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
+              <Button onClick={() => navigate('/registration')} className="bg-gradient-to-r from-orange-500 to-blue-600 text-white px-4 py-1 text-sm rounded-full">
                 Join
               </Button>
             </div>
@@ -229,11 +229,11 @@ const Homepage = memo(() => {
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-3 py-2 space-y-1">
               <a href="#teams" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Teams</a>
-              <a href="#training" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Training</a>
-              <a href="#news" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">News</a>
+              <button onClick={() => navigate('/training')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">Training</button>
+              <button onClick={() => navigate('/news')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">News</button>
               <button onClick={() => navigate('/about')} className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500 w-full text-left">About</button>
               <a href="#contact" className="block px-2 py-1 text-sm text-gray-700 hover:text-orange-500">Contact</a>
-              <Button className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
+              <Button onClick={() => navigate('/registration')} className="w-full mt-1 bg-gradient-to-r from-orange-500 to-blue-600 text-white text-sm rounded-full">
                 Join Now
               </Button>
             </div>
@@ -275,10 +275,10 @@ const Homepage = memo(() => {
                 {heroImages[currentSlide].subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-2">
-                <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm">
+                <Button onClick={() => navigate('/registration')} size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm">
                   Join Our Team
                 </Button>
-                <Button size="sm" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+                <Button onClick={() => navigate('/training')} size="sm" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
                   View Schedule
                 </Button>
               </div>

@@ -1,127 +1,49 @@
 import React, { memo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Users, Mail, Phone } from 'lucide-react';
+import { ArrowLeft, Users, Mail, Phone, Calendar, MapPin, Clock } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+import { getTeamByName } from '../data/teamsData';
 
 const TeamPage = memo(() => {
   const { teamName } = useParams();
   const navigate = useNavigate();
 
-  // Team data with coach and player information
-  const teamsData = {
-    'Kareem': {
-      age: 'U8',
-      gender: 'Boys',
-      grade: 'Saturday U8 Boys Grey',
-      coach: {
-        name: 'Sarah Johnson',
-        photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face&q=80',
-        email: 'sarah.johnson@cebci.com',
-        phone: '0412 345 678'
-      },
-      assistant: 'Mike Davis',
-      manager: 'Emma Wilson',
-      players: [
-        { number: 5, name: 'Tommy Chen', photo: 'https://images.unsplash.com/photo-1546554137-f86b9593a222?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 7, name: 'Lucas Brown', photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 10, name: 'James Wilson', photo: 'https://images.unsplash.com/photo-1600486913747-55e5470d6f40?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 12, name: 'Oliver Taylor', photo: 'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 15, name: 'Noah Martinez', photo: 'https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 21, name: 'Ethan Anderson', photo: 'https://images.unsplash.com/photo-1601455763557-db1bea8a9a5a?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 23, name: 'Liam Garcia', photo: 'https://images.unsplash.com/photo-1625504615927-c14f4f309b63?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 32, name: 'Mason Rodriguez', photo: 'https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 42, name: 'William Lee', photo: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 45, name: 'Benjamin Kim', photo: 'https://images.unsplash.com/photo-1557862921-37829c790f19?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 50, name: 'Henry Zhang', photo: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 55, name: 'Alexander White', photo: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=300&h=300&fit=crop&crop=face&q=80' }
-      ]
-    },
-    'Jewel': {
-      age: 'U8',
-      gender: 'Girls',
-      grade: 'Saturday U8 Girls Blue',
-      coach: {
-        name: 'Emily Chen',
-        photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face&q=80',
-        email: 'emily.chen@cebci.com',
-        phone: '0423 456 789'
-      },
-      assistant: 'Lisa Taylor',
-      manager: 'Anna Garcia',
-      players: [
-        { number: 3, name: 'Emma Davis', photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 8, name: 'Sophia Martinez', photo: 'https://images.unsplash.com/photo-1548142813-c348350df52b?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 11, name: 'Olivia Johnson', photo: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 14, name: 'Ava Brown', photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 16, name: 'Mia Wilson', photo: 'https://images.unsplash.com/photo-1499887142886-791eca5918cd?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 20, name: 'Isabella Garcia', photo: 'https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 24, name: 'Charlotte Lee', photo: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 27, name: 'Amelia Taylor', photo: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 30, name: 'Harper Anderson', photo: 'https://images.unsplash.com/photo-1557296387-5358ad7997bb?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 33, name: 'Ella White', photo: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=300&fit=crop&crop=face&q=80' }
-      ]
-    },
-    'Bryant': {
-      age: 'U10',
-      gender: 'Boys',
-      grade: 'Saturday U10 Boys Gold',
-      coach: {
-        name: 'Mike Davis',
-        photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&q=80',
-        email: 'mike.davis@cebci.com',
-        phone: '0434 567 890'
-      },
-      assistant: 'Tom Anderson',
-      manager: 'Sarah Kim',
-      players: [
-        { number: 4, name: 'Ryan Martinez', photo: 'https://images.unsplash.com/photo-1546554137-f86b9593a222?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 6, name: 'Tyler Johnson', photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 9, name: 'Jackson Brown', photo: 'https://images.unsplash.com/photo-1600486913747-55e5470d6f40?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 13, name: 'Dylan Wilson', photo: 'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 17, name: 'Carter Davis', photo: 'https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 19, name: 'Luke Garcia', photo: 'https://images.unsplash.com/photo-1601455763557-db1bea8a9a5a?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 22, name: 'Connor Lee', photo: 'https://images.unsplash.com/photo-1625504615927-c14f4f309b63?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 25, name: 'Nathan Taylor', photo: 'https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 28, name: 'Isaac Anderson', photo: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 31, name: 'Caleb White', photo: 'https://images.unsplash.com/photo-1557862921-37829c790f19?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 34, name: 'Joshua Kim', photo: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 36, name: 'Andrew Zhang', photo: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 40, name: 'Daniel Rodriguez', photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face&q=80' },
-        { number: 44, name: 'Matthew Harris', photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face&q=80' }
-      ]
-    },
-    // Add more teams with similar structure...
-    // For brevity, I'll add a few more key teams and use a default for others
-  };
+  // Get team data from centralized teamsData
+  const teamData = getTeamByName(teamName);
 
-  // Default team data for teams not explicitly defined
-  const getDefaultTeam = (name, age, gender) => ({
-    age: age,
-    gender: gender,
-    grade: `Saturday ${age} ${gender} Division`,
-    coach: {
-      name: `Coach ${name}`,
-      photo: gender === 'Girls'
-        ? 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face&q=80'
-        : 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&q=80',
-      email: `coach.${name.toLowerCase()}@cebci.com`,
-      phone: '0400 000 000'
-    },
-    assistant: 'Assistant Coach',
-    manager: 'Team Manager',
-    players: Array.from({ length: 12 }, (_, i) => ({
+  // Generate placeholder players for display
+  const generatePlayers = (count, gender) => {
+    return Array.from({ length: count }, (_, i) => ({
       number: i + 1,
       name: `Player ${i + 1}`,
       photo: gender === 'Girls'
         ? 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face&q=80'
         : 'https://images.unsplash.com/photo-1546554137-f86b9593a222?w=300&h=300&fit=crop&crop=face&q=80'
-    }))
-  });
+    }));
+  };
 
-  // Get team data or use default
-  const team = teamsData[teamName] || getDefaultTeam(teamName, 'U10', 'Mixed');
+  // If team not found, show error
+  if (!teamData) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Team Not Found</h1>
+          <p className="text-gray-600 mb-6">The team "{teamName}" could not be found.</p>
+          <Button onClick={() => navigate('/')} className="bg-gradient-to-r from-orange-500 to-blue-600">
+            Back to Home
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  // Use team data with generated players
+  const team = {
+    ...teamData,
+    players: generatePlayers(teamData.playerCount, teamData.gender)
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -166,6 +88,69 @@ const TeamPage = memo(() => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        {/* Training & Match Schedule */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Schedule</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Training Schedule */}
+            <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
+                    <Calendar className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Training</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <Calendar className="w-5 h-5 text-orange-600 mr-3 mt-0.5" />
+                    <div>
+                      <p className="text-sm text-gray-600 font-medium">Day & Time</p>
+                      <p className="text-gray-900 font-semibold">{team.training.day}s, {team.training.time}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <MapPin className="w-5 h-5 text-orange-600 mr-3 mt-0.5" />
+                    <div>
+                      <p className="text-sm text-gray-600 font-medium">Location</p>
+                      <p className="text-gray-900 font-semibold">{team.training.location}</p>
+                      <p className="text-sm text-gray-600">{team.training.address}</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Match Schedule */}
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Match Day</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <Calendar className="w-5 h-5 text-blue-600 mr-3 mt-0.5" />
+                    <div>
+                      <p className="text-sm text-gray-600 font-medium">Day & Time</p>
+                      <p className="text-gray-900 font-semibold">{team.matchDay.day}s, {team.matchDay.time}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <MapPin className="w-5 h-5 text-blue-600 mr-3 mt-0.5" />
+                    <div>
+                      <p className="text-sm text-gray-600 font-medium">Venue</p>
+                      <p className="text-gray-900 font-semibold">{team.matchDay.venue}</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Coaching Staff */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Coaching Staff</h2>
