@@ -39,40 +39,52 @@ aws s3 sync build/ s3://your-bucket/v1/ --delete
 ### Issue 2: Blank Page After Deployment
 
 **Symptom:**
-Website loads but shows blank white page, console shows errors.
+Website loads but shows blank white page, no errors or empty pages.
 
 **Cause:**
-1. Build paths issue (see Issue 1 above)
-2. Browser cache showing old version
-3. Missing index.html or routing issue
+React Router (BrowserRouter) not configured for subdirectory deployment (/v1/, /latest/).
 
 **Solution:**
+
+**✅ THIS HAS BEEN FIXED!**
+
+The app now uses `HashRouter` instead of `BrowserRouter`, which works perfectly for S3 subdirectory deployments.
+
+**What this means:**
+- URLs now use hash routing: `http://bucket.../v1/#/`
+- Team pages: `http://bucket.../v1/#/team/Kareem`
+- News pages: `http://bucket.../v1/#/news`
+- Works in ANY subdirectory (v1, v2, latest) without configuration
+- No server-side routing needed
+
+**To fix existing deployment:**
+```bash
+cd frontend
+./deploy-to-s3-versioned.sh
+# This will create a new version with HashRouter
+```
+
+**If still seeing blank page after redeployment:**
 
 **Step 1:** Clear browser cache
 - Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
 - Or clear browser cache completely
 
-**Step 2:** Verify deployment
+**Step 2:** Check browser console for errors
+- Open DevTools (F12)
+- Look for errors in Console tab
+- Check Network tab for failed requests
+
+**Step 3:** Verify files deployed
 ```bash
-# Check if files exist in S3
 aws s3 ls s3://your-bucket/latest/ --recursive
-
-# Should see:
-# index.html
-# static/js/main.xxxxx.js
-# static/css/main.xxxxx.css
+# Should see index.html and static/ folder
 ```
 
-**Step 3:** Check S3 website configuration
+**Step 4:** Test direct URL
 ```bash
-aws s3 website s3://your-bucket \
-  --index-document index.html \
-  --error-document index.html
-```
-
-**Step 4:** Verify bucket policy allows public read
-```bash
-aws s3api get-bucket-policy --bucket your-bucket
+# Should load the page
+curl http://your-bucket.s3-website-REGION.amazonaws.com/latest/
 ```
 
 ---
@@ -89,15 +101,20 @@ S3 static website hosting doesn't support client-side routing by default.
 
 **Solution:**
 
-**Already configured:** The deployment script sets error document to `index.html`, which fixes this:
-```bash
-aws s3 website s3://your-bucket \
-  --error-document index.html  # This line fixes React Router
-```
+**✅ THIS HAS BEEN FIXED!**
 
-**If still having issues:**
-1. Verify error document is set (see above)
-2. Use CloudFront with custom error responses (recommended for production)
+The app now uses `HashRouter` which eliminates this issue entirely:
+- Homepage: `http://bucket.../latest/#/`
+- Team page: `http://bucket.../latest/#/team/Kareem`
+- News page: `http://bucket.../latest/#/news/article-slug`
+
+With hash routing:
+- Everything after `#` is handled client-side
+- No 404 errors on page refresh
+- Works perfectly with S3 static hosting
+- No server configuration needed
+
+**Note:** URLs will have a `#` in them (e.g., `/#/team/Kareem`). This is normal for hash routing and ensures reliability across all hosting platforms.
 
 ---
 
