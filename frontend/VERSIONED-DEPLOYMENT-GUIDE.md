@@ -152,7 +152,8 @@ The system maintains a `versions.json` file in your S3 bucket with deployment me
 ### What Happens on Deployment
 
 ```
-Step 1: Build React app → Creates optimized build/
+Step 1: Build React app with relative paths → Creates optimized build/
+        Uses PUBLIC_URL=. to ensure app works in subdirectories
 Step 2: Check S3 bucket → Creates if doesn't exist
 Step 3: Configure hosting → Sets up static website
 Step 4: Apply policies → Enables public read access
@@ -163,6 +164,8 @@ Step 8: Update /latest/ → Syncs to latest folder
 Step 9: Set content types → Ensures proper MIME types
 Step 10: Update tracking → Saves version metadata
 ```
+
+**Important:** The script automatically builds with relative paths (`PUBLIC_URL=.`) so the app works correctly in subdirectories like `/v1/`, `/latest/`, etc.
 
 ## 📂 S3 Bucket Structure
 

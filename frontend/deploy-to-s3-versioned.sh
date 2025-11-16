@@ -92,9 +92,10 @@ EOF
 EOF
 }
 
-# Step 1: Build the React app
-echo -e "${YELLOW}Step 1: Building React app...${NC}"
-npm run build
+# Step 1: Build the React app with relative paths
+echo -e "${YELLOW}Step 1: Building React app with relative paths...${NC}"
+# Use relative paths so the build works in subdirectories (/v1/, /latest/, etc.)
+PUBLIC_URL=. npm run build
 echo -e "${GREEN}✓ Build completed${NC}\n"
 
 # Step 2: Create S3 bucket (if needed)

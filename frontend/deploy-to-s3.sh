@@ -36,6 +36,7 @@ echo -e "${GREEN}✓ AWS CLI configured${NC}\n"
 
 # Step 1: Build the React app
 echo -e "${YELLOW}Step 1: Building React app...${NC}"
+# Build with absolute paths for root deployment
 npm run build
 echo -e "${GREEN}✓ Build completed${NC}\n"
 
